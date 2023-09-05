@@ -16,35 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.1 计算机系统简介1.1.1 计算机的软硬件概念计算机系统有“硬件”和“软件”两大部分组成。 ​	硬件：计算机的实体，如主机、外设等 ​	软件：由具有各类特殊的功能的信息（程序）组成 软件可以分为 ​	系统软件：用来管理整个计算机系统 。如 语言处理程序、操作系统、服务型程序、数据库管理系统、网络软件 ​	应用软件：按任务需要编制成的各种程序 1.1.2 计算机系统的成层次结构方向：M4→M3">
+    <meta name="description" content="本章主要介绍计算机的组成概貌及工作原理，旨在使读者对计算机总体结构有一个概括的了解，为深入学习后面各章打下基础。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(一)计算机系统概论">
+<meta property="og:title" content="计算机系统概论(一)">
 <meta property="og:url" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.1 计算机系统简介1.1.1 计算机的软硬件概念计算机系统有“硬件”和“软件”两大部分组成。 ​	硬件：计算机的实体，如主机、外设等 ​	软件：由具有各类特殊的功能的信息（程序）组成 软件可以分为 ​	系统软件：用来管理整个计算机系统 。如 语言处理程序、操作系统、服务型程序、数据库管理系统、网络软件 ​	应用软件：按任务需要编制成的各种程序 1.1.2 计算机系统的成层次结构方向：M4→M3">
+<meta property="og:description" content="本章主要介绍计算机的组成概貌及工作原理，旨在使读者对计算机总体结构有一个概括的了解，为深入学习后面各章打下基础。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827201047407.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827201352277.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827202137512.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827201750247.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827202644280.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827202827546.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827202846884.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827202907215.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827202931819.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827203029187.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827203302609.png">
-<meta property="og:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827203825422.png">
+<meta property="og:image" content="http://example.com/img/2.jpg">
 <meta property="article:published_time" content="2023-08-27T12:00:07.000Z">
-<meta property="article:modified_time" content="2023-08-29T12:03:52.375Z">
+<meta property="article:modified_time" content="2023-09-05T12:58:46.569Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20230827201047407.png">
+<meta name="twitter:image" content="http://example.com/img/2.jpg">
   
   
   
-  <title>(一)计算机系统概论 - Hexo</title>
+  <title>计算机系统概论(一) - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="(一)计算机系统概论"></span>
+            <span id="subtitle" data-typed-text="计算机系统概论(一)"></span>
           
         </div>
 
@@ -233,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          3.5k 字
         
       </span>
     
@@ -244,7 +233,7 @@
         
         
         
-          29 分钟
+          30 分钟
         
       </span>
     
@@ -281,12 +270,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">(一)计算机系统概论</h1>
+            <h1 id="seo-header">计算机系统概论(一)</h1>
             
             
               <div class="markdown-body">
                 
-                <h4 id="1-1-计算机系统简介"><a href="#1-1-计算机系统简介" class="headerlink" title="1.1 计算机系统简介"></a>1.1 计算机系统简介</h4><h5 id="1-1-1-计算机的软硬件概念"><a href="#1-1-1-计算机的软硬件概念" class="headerlink" title="1.1.1 计算机的软硬件概念"></a>1.1.1 计算机的软硬件概念</h5><p><strong>计算机系统有“硬件”和“软件”两大部分组成。</strong></p>
+                <p>本章主要介绍计算机的组成概貌及工作原理，旨在使读者对计算机总体结构有一个概括的<br>了解，为深入学习后面各章打下基础。</p>
+<span id="more"></span>
+
+<h4 id="1-1-计算机系统简介"><a href="#1-1-计算机系统简介" class="headerlink" title="1.1 计算机系统简介"></a>1.1 计算机系统简介</h4><h5 id="1-1-1-计算机的软硬件概念"><a href="#1-1-1-计算机的软硬件概念" class="headerlink" title="1.1.1 计算机的软硬件概念"></a>1.1.1 计算机的软硬件概念</h5><p><strong>计算机系统有“硬件”和“软件”两大部分组成。</strong></p>
 <p>​	<strong>硬件</strong>：计算机的实体，如主机、外设等</p>
 <p>​	<strong>软件</strong>：由具有各类特殊的功能的信息（程序）组成</p>
 <p>软件可以分为</p>
@@ -468,7 +460,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>(一)计算机系统概论</div>
+      <div>计算机系统概论(一)</div>
       <div>http://example.com/2023/08/27/计算机组成原理一/</div>
     </div>
     <div class="license-meta">
@@ -513,9 +505,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/" title="(二)系统总线">
+                      <a href="/2023/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/" title="系统总线(二)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">(二)系统总线</span>
+                        <span class="hidden-mobile">系统总线(二)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
