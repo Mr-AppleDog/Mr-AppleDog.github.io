@@ -13,7 +13,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="李呀李嘉图">
   <meta name="keywords" content="">
   
     <meta name="description" content="除了CPU和存储器两大模块外，计算机硬件系统的第三个关键部分是输入输出模块，又称输入输出系统。随着计算机系统的不断发展，应用范围的不断扩大，I&#x2F;O设备的数量和种类也越来越多，它们与主机的联络方式及信息的交换方式也各不相同。">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://example.com/background/8.jpg">
 <meta property="article:published_time" content="2023-09-19T08:45:07.000Z">
 <meta property="article:modified_time" content="2023-09-26T12:55:45.540Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="李呀李嘉图">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/background/8.jpg">
@@ -285,7 +285,7 @@
 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="输入输出系统的发展概况"><a href="#输入输出系统的发展概况" class="headerlink" title="输入输出系统的发展概况"></a>输入输出系统的发展概况</h4><p>输入输出系统的发展大致可分为4个阶段。</p>
 <p>1、早期</p>
 <p>早期的I&#x2F;O设备种类较少，I&#x2F;O设备与主存交换信息都必须通过CPU</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230919165053240.png" srcset="/img/loading.gif" lazyload class="" title="image-20230919165053240">
+
 
 <p>这种交换方式延续了相当长的时间。当时的&#x2F;O设备具有以下几个特点：</p>
 <ul>
@@ -295,11 +295,11 @@
 </ul>
 <p>2、接口模块和DMA阶段</p>
 <p>这个阶段&#x2F;O设备通过接口模块与主机连接，计算机系统采用了总线结构</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230919165303547.png" srcset="/img/loading.gif" lazyload class="" title="image-20230919165303547">
+
 
 <p>通常，在接口中都设有数据通路和控制通路。数据经过接口既起到缓冲作用，又可完成串一并变换。控制通路用以传送CPU向I&#x2F;O设备发出的各种控制命令，或使CPU接受来自I&#x2F;O设备的反馈信号。许多接口还能满足中断请求处理的要求，使I&#x2F;O设备与CPU可按并行方式工作，大大地提高了CPU的工作效率。采用接口技术还可以使多台I&#x2F;O设备分时占用总线，使多台I&#x2F;0设备互相之间也可实现并行工作方式，有利于整机工作效率的提高。虽然这个阶段实现了CPU和I&#x2F;O设备并行工作，但是在主机与I&#x2F;O设备交换信息时，CPU要中断现行程序，即CPU与I&#x2F;0设备还不能做到绝对的并行工作。为了进一步提高CPU的工作效率，又出现了直接存储器存取(Direct Memory Access,DMA)技术，其特点是I&#x2F;O设备与主存之间有一条直接数据通路，I&#x2F;O设备可以与主存直接交换信息，使CPU在I&#x2F;O设备与主存交换信息时能继续完成自身的工作，故资源利用率得到了进一步提高。</p>
 <p>3、具有通道结构的阶段</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230919165518859.png" srcset="/img/loading.gif" lazyload class="" title="image-20230919165518859">
+
 
 <p>在小型和微型计算机中，采用DMA方式可实现高速I&#x2F;O设备与主机之间成组数据的交换，但在大中型计算机中，I&#x2F;O设备配置繁多，数据传送频繁，若仍采用DMA方式会出现一系列问题。</p>
 <ul>
@@ -346,7 +346,7 @@
 <li>异步工作采用应答信号联络</li>
 </ul>
 <p>当I&#x2F;O设备与主机工作速度不匹配时，通常采用异步工作方式。这种方式在交换信息前，I&#x2F;O设备与CPU各自完成自身的任务，一旦出现联络信号，彼此才准备交换信息。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920133546602.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920133546602">
+
 
 <ul>
 <li>同步工作采用同步时标联络</li>
@@ -363,22 +363,22 @@
 <h4 id="I-O设备与主机信息传送的控制方式"><a href="#I-O设备与主机信息传送的控制方式" class="headerlink" title="I&#x2F;O设备与主机信息传送的控制方式"></a>I&#x2F;O设备与主机信息传送的控制方式</h4><p>I&#x2F;0设备与主机交换信息时，共有5种控制方式：程序查询方式、程序中断方式、直接存储器存取方式(DMA)、I&#x2F;0通道方式、I&#x2F;0处理机方式。</p>
 <h6 id="程序查询方式"><a href="#程序查询方式" class="headerlink" title="程序查询方式"></a>程序查询方式</h6><p>程序查询方式是由CPU通过程序不断查询I&#x2F;O设备是否已做好准备，从而控制I&#x2F;O设备与主机交换信息。采用这种方式实现主机和I&#x2F;O设备交换信息，要求I&#x2F;O接口内设置一个能反映I&#x2F;O设备是否准备就绪的状态标记，CPU通过对此标记的检测，可得知I&#x2F;O设备的准备情况。</p>
 <p>当现行程序需启动某I&#x2F;O设备工作时，即将此程序流程插入到运行的程序中。由图中可知，CPU启动I&#x2F;O设备后便开始对I&#x2F;O设备的状态进行查询。若查得I&#x2F;O设备未准备就绪，就继续查询；若查得I&#x2F;O设备准备就绪，就将数据从I&#x2F;O接口送至CPU,再由CPU送至主存。这样一个字一个字地传送，直至这个数据块的数据全部传送结束，CPU又重新回到原现行程序。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920134310369.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920134310369">
+
 
 <p>由这个查询过程可见，只要一启动I&#x2F;O设备，CPU便不断查询I&#x2F;O设备的准备情况，从而终止了原程序的执行。CPU在反复查询过程中，犹如就地“踏步”。另一方面，I&#x2F;O设备准备就绪后，CPU要一个字一个字地从I&#x2F;O设备取出，经CPU送至主存，此刻CPU也不能执行原程序，可见这种方式使CPU和I&#x2F;O设备处于串行工作状态，CPU的工作效率不高。</p>
 <h6 id="程序中断方式"><a href="#程序中断方式" class="headerlink" title="程序中断方式"></a>程序中断方式</h6><p>徜若CPU在启动I&#x2F;O设备后，不查询设备是否已准备就绪，继续执行自身程序，只是当I&#x2F;O设备推备就绪并向CPU发出中断请求后才予以响应，这将大大提高CPU的工作效率。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920134745159.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920134745159">
+
 
 <p>由图中可见，CPU启动I&#x2F;O设备后仍继续执行原程序，在第K条指令执行结束后，CPU响应了I&#x2F;O设备的请求，中断了现行程序，转至中断服务程序，待处理完后又返回到原程序断点处，继续从第K+1条指令往下执行。由于这种方式使原程序中断了运行，故称为程序中断方式。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920134903603.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920134903603">
+
 
 <h6 id="DMA"><a href="#DMA" class="headerlink" title="DMA"></a>DMA</h6><p>虽然程序中断方式消除了程序查询方式的“踏步”现象，提高了CPU资源的利用率，但是CPU在响应中断请求后，必须停止现行程序而转入中断服务程序，并且为了完成I&#x2F;O设备与主存交换信息，还不得不占用CPU内部的一些寄存器，这同样是对CPU资源的消耗。如果I&#x2F;O设备能直接与主存交换信息而不占用CPU,那么，CPU的资源利用率显然又可进一步提高，这就出现了直接存储器存取(DMA)的方式。</p>
 <p>在DMA方式中，主存与&#x2F;O设备之间有一条数据通路，主存与I&#x2F;0设备交换信息时，无须调用中断服务程序。若出现DMA和CPU同时访问主存，CPU总是将总线占有权让给DMA,通常把DMA的这种占有称为窃取或挪用。窃取的时间一般为一个存取周期，故又把DMA占用的存取周期窃取周期或挪用周期。而且，在DMA窃取存取周期时，CPU尚能继续作内部操作（如乘法运算）。可见，与程序查询和程序中断方式相比，DMA方式进一步提高了CPU的资源利用率。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920135237074.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920135237074">
 
 
 
-<h6 id="三种方式的-CPU-工作效率比较"><a href="#三种方式的-CPU-工作效率比较" class="headerlink" title="三种方式的 CPU 工作效率比较"></a>三种方式的 CPU 工作效率比较</h6><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920135309902.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920135309902">
+
+<h6 id="三种方式的-CPU-工作效率比较"><a href="#三种方式的-CPU-工作效率比较" class="headerlink" title="三种方式的 CPU 工作效率比较"></a>三种方式的 CPU 工作效率比较</h6>
 
 
 
@@ -387,7 +387,7 @@
 
 
 <h3 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I&#x2F;O设备"></a>I&#x2F;O设备</h3><p>中央处理器和主存构成了主机，除主机外的大部分硬件设备都可称为&#x2F;0设备或外部设备，或外围设备，简称外设,I&#x2F;O设备的组成通常可用图画线框内的结构来描述。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230920185042630.png" srcset="/img/loading.gif" lazyload class="" title="image-20230920185042630">
+
 
 <p>I&#x2F;O设备大致可分为三类:</p>
 <ul>
@@ -437,7 +437,7 @@
 <li>I&#x2F;O设备需将其工作状态（如“忙”、“就绪”、“错误”、“中断请求”等）及时向CPU报告</li>
 </ul>
 <p>通过接口可监视设备的工作状态，并可保存状态信息，供CPU查询。值得注意的是，接口(Interface)和端口(Port)是两个不同的概念。端口是指接口电路中的一些寄存器，这些寄存器分别用来存放数据信息、控制信息和状态信息，相应的端口分别称为数据端口、控制端口和状态端口。若干个端口加上相应的控制逻辑才能组成接口。CPU通过输人指令，从端口读人信息，通过输出指令，可将信息写人到端口中。</p>
-<h4 id="接口的功能和组成"><a href="#接口的功能和组成" class="headerlink" title="接口的功能和组成"></a>接口的功能和组成</h4><h5 id="按总线的连接方式的I-O接口方式"><a href="#按总线的连接方式的I-O接口方式" class="headerlink" title="按总线的连接方式的I&#x2F;O接口方式"></a>按总线的连接方式的I&#x2F;O接口方式</h5><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921133011814.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921133011814">
+<h4 id="接口的功能和组成"><a href="#接口的功能和组成" class="headerlink" title="接口的功能和组成"></a>接口的功能和组成</h4><h5 id="按总线的连接方式的I-O接口方式"><a href="#按总线的连接方式的I-O接口方式" class="headerlink" title="按总线的连接方式的I&#x2F;O接口方式"></a>按总线的连接方式的I&#x2F;O接口方式</h5>
 
 <ul>
 <li>数据线</li>
@@ -476,7 +476,7 @@
 <li>当D&#x3D;1,B&#x3D;0时，表示I&#x2F;O设备已经准备就绪。</li>
 <li>当D&#x3D;0,B&#x3D;1时，表示I&#x2F;O设备正处于准备状态。</li>
 </ol>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921134020211.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921134020211">
+
 
 <h4 id="接口类型"><a href="#接口类型" class="headerlink" title="接口类型"></a>接口类型</h4><ol>
 <li>按数据传送方式分类</li>
@@ -500,12 +500,12 @@
 <li>中断接口	Intel 8259</li>
 <li>DMA接口	Intel 8257</li>
 </ul>
-<h3 id="程序查询方式-1"><a href="#程序查询方式-1" class="headerlink" title="程序查询方式"></a>程序查询方式</h3><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921135908938.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921135908938">
+<h3 id="程序查询方式-1"><a href="#程序查询方式-1" class="headerlink" title="程序查询方式"></a>程序查询方式</h3>
 
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921135932696.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921135932696">
+
 
 <p>当I&#x2F;O设备较多时，CPU需按各个I&#x2F;O设备在系统中的优先级别进行遂级查询，其流程图所示。图中设备的优先顺序按1至N降序排列。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921175143457.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921175143457">
+
 
 <ol>
 <li>由于这种方式传送数据时要占用CPU中的寄存器，故首先需将寄存器原内容保护起来(若该寄存器中存有用信息)。</li>
@@ -519,7 +519,7 @@
 <li>判断计数值。若计数值不为0，表示一批数据尚未传送完，重新启动外设继续传送；若计数值为0，则表示一批数据已传送完毕。</li>
 <li>结束I&#x2F;O传送，继续执行现行程序。</li>
 </ol>
-<h4 id="程序查询方式的接口电路"><a href="#程序查询方式的接口电路" class="headerlink" title="程序查询方式的接口电路"></a>程序查询方式的接口电路</h4><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921175621004.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921175621004">
+<h4 id="程序查询方式的接口电路"><a href="#程序查询方式的接口电路" class="headerlink" title="程序查询方式的接口电路"></a>程序查询方式的接口电路</h4>
 
 <p>图中设备选择电路用以识别本设备地址，当地址线上的设备号与本设备号相符时，SEL有效，可以接收命令；数据缓冲寄存器用于存放欲传送的数据；D是完成触发器，B是工作触发器。以输入设备为例，该接口的工作过程如下：</p>
 <ol>
@@ -534,22 +534,22 @@
 </ol>
 <h3 id="程序中断方式-1"><a href="#程序中断方式-1" class="headerlink" title="程序中断方式"></a>程序中断方式</h3><p>计算机在执行程序的过程中，当出现异常情况或特殊请求时，计算机停止现行程序的运行，转向对这些异常情况或特殊请求的处理，处理结束后再返回到现行程序的间断处，继续执行原程序，这就是“中断”。中断是现代计算机能有效合理地发挥效能和提高效率的一个十分重要的功能。通常又把实现这种功能所需的软硬件技术统称为中断技术。</p>
 <h4 id="I-O中断的产生"><a href="#I-O中断的产生" class="headerlink" title="I&#x2F;O中断的产生"></a>I&#x2F;O中断的产生</h4><p>在I&#x2F;O设备与主机交换信息时，由于设备本身机电特性的影响，其工作速度较低，与CPU无法匹配，因此，CPU启动设备后，往往需要等待一段时间才能实现主机与I&#x2F;O设备之间的信息交换。如果在设备准备的同时，CPU不作无谓的等待，而继续执行现行程序，只有当I&#x2F;O设备准备就绪向CPU提出请求后，再暂时中断CPU现行程序转人I&#x2F;O服务程序，这便产生了I&#x2F;O中断。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921185718159.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921185718159">
+
 
 <h4 id="程序中断方式的接口电路"><a href="#程序中断方式的接口电路" class="headerlink" title="程序中断方式的接口电路"></a>程序中断方式的接口电路</h4><h5 id="中断请求触发器和中断屏蔽触发器"><a href="#中断请求触发器和中断屏蔽触发器" class="headerlink" title="中断请求触发器和中断屏蔽触发器"></a>中断请求触发器和中断屏蔽触发器</h5><p>每台外部设备都必须配置一个中断请求触发器INTR,当其为“1”时，表示该设备向CPU提出中断请求。但是设备欲提出中断请求时，其设备本身必须准备就绪，即接口内的完成触发器D的状态必须为“1”。</p>
 <p>由于计算机应用的范围越来越广泛，向CPU提出中断请求的原因也越来越多，除了各种I&#x2F;O设备外，还有其他许多突发性事件都是引起中断的因素，为此，把凡能向CPU提出中断请求的各种因素统称为中断源。当多个中断源向CPU提出中断请求时，CPU必须坚持一个原则，即在任何瞬间只能接受一个中断源的请求。所以，当多个中断源同时提出请求时，CPU必须对各中断源的请求进行排队，且只能接受级别最高的中断源的请求，不允许级别低的中断源中断正在运行的中断服务程序。这样，在I&#x2F;O接口中需设置一个屏蔽触发器MASK,当其为“1”时，表示被屏的中断服务程序。这样，在I&#x2F;O接口中需设置一个屏蔽触发器MASK,当其为“1”时，表示被屏蔽，即封锁其中断源的请求。可见中断请求触发器和中断屏蔽触发器在I&#x2F;O接口中是成对出现的。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921211335034.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921211335034">
+
 
 <h5 id="排队器"><a href="#排队器" class="headerlink" title="排队器"></a>排队器</h5><p>如上所述，当多个中断源同时向CPU提出请求时，CPU只能按中断源的不同性质对其排队，给予不同等级的优先权，并按优先等级的高低予以响应。就I&#x2F;O中断而言，速度越高的I&#x2F;O设备，优先级越高</p>
 <p>图下面的一排门电路是链式排队器的核心。每个接口中有一个反相器和一个“与非”门（如图中点画线框内所示），它们之间犹如链条一样串接在一起，故称为链式排队器。该电路中级别最高的中断源是1号，其次是2号、3号、4号。不论是哪个中断源（一个或多个）提出中断请求，排队器输出端INTP只有一个高电平。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921211632244.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921211632244">
+
 
 <h5 id="中断向量地址形成部件（设备编码器）"><a href="#中断向量地址形成部件（设备编码器）" class="headerlink" title="中断向量地址形成部件（设备编码器）"></a>中断向量地址形成部件（设备编码器）</h5><p>CPU一且响应了&#x2F;0中断，就要暂停现行程序，转去执行该设备的中断服务程序。不同的设备有不同的中断服务程序，每个服务程序都有一个人口地址，CPU必须找到这个入口地址。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921211847534.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921211847534">
+
 
 <h4 id="I-O中断处理过程"><a href="#I-O中断处理过程" class="headerlink" title="I&#x2F;O中断处理过程"></a>I&#x2F;O中断处理过程</h4><h5 id="CPU响应中断的条件和时间"><a href="#CPU响应中断的条件和时间" class="headerlink" title="CPU响应中断的条件和时间"></a>CPU响应中断的条件和时间</h5><p>CPU响应I&#x2F;O设备提出中断请求的条件是必须满足CPU中的允许中断触发器EINT为“1”。该触发器可用开中断指令置位（称为开中断）：也可用关中断指令或硬件自动使其复位（称为关中断)。</p>
 <p>I&#x2F;O设备准备就绪的时间（即D&#x3D;1)是随机的，而CPU是在统一的时刻(每条指令执行阶段结束前)向接口发中断查询信号，以获取&#x2F;0的中断请求。因此，CPU响应中断的时间一定是在每条指令执行阶段的结束时刻。</p>
-<h5 id="I-O处理中断的过程"><a href="#I-O处理中断的过程" class="headerlink" title="I&#x2F;O处理中断的过程"></a>I&#x2F;O处理中断的过程</h5><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921214815629.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921214815629">
+<h5 id="I-O处理中断的过程"><a href="#I-O处理中断的过程" class="headerlink" title="I&#x2F;O处理中断的过程"></a>I&#x2F;O处理中断的过程</h5>
 
 <p>下面以输人设备为例，结合图，说明I&#x2F;O中断处理的全过程。当CPU通过I&#x2F;O指令的地址码选中某设备后，则</p>
 <ol>
@@ -585,29 +585,29 @@
 <li>单重中断 不允许中断现行的中断服务程序</li>
 <li>多重中断 允许级别更高的中断源中断现行的中断服务程序</li>
 </ul>
-<h5 id="单重中断和多重中断的服务程序流程"><a href="#单重中断和多重中断的服务程序流程" class="headerlink" title="单重中断和多重中断的服务程序流程"></a>单重中断和多重中断的服务程序流程</h5><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230921215635101.png" srcset="/img/loading.gif" lazyload class="" title="image-20230921215635101">
+<h5 id="单重中断和多重中断的服务程序流程"><a href="#单重中断和多重中断的服务程序流程" class="headerlink" title="单重中断和多重中断的服务程序流程"></a>单重中断和多重中断的服务程序流程</h5>
 
 <p>计算机在处理中断的过程中，有可能出现新的中断请求，此时如果CPU暂停现行的中断服务程序，转去处理新的中断请求，这种现象称为中断嵌套，或多重中断。倘若CPU在执行中断服务程序时，对新的中断请求不予理睬，这种中断称为单重中断。这两种处理方式的中断服务程序路有区别，上图分别为单重中断和多重中断服务程序流程。比较上图可以发现，其区别在于“开中断”的设置时间不同。</p>
-<h3 id="DMA方式"><a href="#DMA方式" class="headerlink" title="DMA方式"></a>DMA方式</h3><h4 id="DMA方式特点"><a href="#DMA方式特点" class="headerlink" title="DMA方式特点"></a>DMA方式特点</h4><h5 id="DMA-和程序中断两种方式的数据通路"><a href="#DMA-和程序中断两种方式的数据通路" class="headerlink" title="DMA 和程序中断两种方式的数据通路"></a>DMA 和程序中断两种方式的数据通路</h5><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926201541917.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926201541917">
+<h3 id="DMA方式"><a href="#DMA方式" class="headerlink" title="DMA方式"></a>DMA方式</h3><h4 id="DMA方式特点"><a href="#DMA方式特点" class="headerlink" title="DMA方式特点"></a>DMA方式特点</h4><h5 id="DMA-和程序中断两种方式的数据通路"><a href="#DMA-和程序中断两种方式的数据通路" class="headerlink" title="DMA 和程序中断两种方式的数据通路"></a>DMA 和程序中断两种方式的数据通路</h5>
 
 <p>由于主存和DMA接口之间有一条数据通路，因此主存和设备交换信息时，不通过CPU,也不需要CPU暂停现行程序为设备服务，省去了保护现场和恢复现场，因此工作速度比程序中断方式的工作速度高。这一特点特别适合于高速I&#x2F;O或辅存与主存之间的信息交换。因为高速I&#x2F;O设备若每次申请与主机交换信息时，都要等待CPU做出中断响应后再进行，很可能因此使数据丢失。值得注意的是，若出现高速I&#x2F;O(通过DMA接口)和CPU同时访问主存，CPU必须将总线(如地址线、数据线)占有权让给DMA接口使用，即DMA采用周期窃取的方式占用一个存取周期。</p>
 <h5 id="DMA-与主存交换数据的三种方式"><a href="#DMA-与主存交换数据的三种方式" class="headerlink" title="DMA 与主存交换数据的三种方式"></a>DMA 与主存交换数据的三种方式</h5><ul>
 <li>停止 CPU 访问主存</li>
 </ul>
 <p>当外设要求传送一批数据时，由DMA接口向CPU发一个停止信号，要求CPU放弃地址线、数据线和有关控制线的使用权。DMA接口获得总线控制权后，开始进行数据传送，在数据传送结束后，DMA接口通知CPU可以使用主存，并把总线控制权交回给CPU</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926202217133.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926202217133">
+
 
 <ul>
 <li>周期挪用（或周期窃取）</li>
 </ul>
 <p>在这种方法中，每当I&#x2F;O设备发出DMA请求时，IO设备便挪用或窃取总线占用权一个或几个主存周期，而DMA不请求时，CPU仍继续访问主存。I&#x2F;O设备请求DMA传送会遇到三种情祝。一种是CPU此时不需要访问主存（如CPU正在执行乘法指令，由于乘法指令执行时间较长，此时CPU不需要访问主存)，故I&#x2F;O设备与CPU不发生冲突。第二种情况是I&#x2F;O设备请求DMA传送时，CPU正在访问主存，此时必须待存取周期结束，CPU才能将总线占有权让出。第三种情况是I&#x2F;O设备要求访问主存时，CPU也要求访问主存，这就出现了访问冲突。此刻，I&#x2F;O访存优先于CPU访问主存，因为I&#x2F;O不立即访问主存就可能丢失数据，这时I&#x2F;O要窃取一、二个存取周期，意味着CPU在执行访问主存指令过程中插入了DMA请求，并挪用了一、二个存取周期，使CPU延缓了一、二个存取周期再访问主存。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926202243779.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926202243779">
+
 
 <ul>
 <li>DMA 与 CPU 交替访问</li>
 </ul>
 <p>这种方法适合于CPU的工作周期比主存存取周期长的情况。例如，CPU的工作周期为1.2u3,主存的存取周期小于0.6us,那么可将一个CPU周期分为C和C2两个分周期，其中C,专供DMA访存，C2专供CPU访存，</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926202301140.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926202301140">
+
 
 <h4 id="DMA-接口的功能和组成"><a href="#DMA-接口的功能和组成" class="headerlink" title="DMA 接口的功能和组成"></a>DMA 接口的功能和组成</h4><h5 id="DMA-接口功能"><a href="#DMA-接口功能" class="headerlink" title="DMA 接口功能"></a>DMA 接口功能</h5><p>利用DMA方式传送数据时，数据的传输过程完全由DMA接口电路控制，故DMA接口又有DMA控制器之称。DMA接口应具有如下几个功能。</p>
 <ul>
@@ -617,7 +617,7 @@
 <li>确定数据传送的起始地址和数据长度，修正数据传送过程中的数据地址和数据长度。</li>
 <li>在数据块传送结束时，给出DMA操作完成的信号。</li>
 </ul>
-<h5 id="DMA-接口组成"><a href="#DMA-接口组成" class="headerlink" title="DMA 接口组成"></a>DMA 接口组成</h5><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926202653060.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926202653060">
+<h5 id="DMA-接口组成"><a href="#DMA-接口组成" class="headerlink" title="DMA 接口组成"></a>DMA 接口组成</h5>
 
 <ul>
 <li>主存地址寄存器(AR)</li>
@@ -652,10 +652,10 @@
 <li>对字计数器赋予交换数据的个数。</li>
 </ol>
 <p>上述工作由CPU执行几条输入输出指令完成，即程序的初始化阶段。这些工作完成后，CPU继续执行原来的程序，当I&#x2F;O设备推备好发送的数据（输人）或上次接收的数据已经处理完毕（输出）时，它便通过DMA接口向CPU提出占用总线的申请，若有多个DMA同时申请，则按轻重缓急由硬件排队判优逻辑决定优先等。待I&#x2F;O设备得到主存总线的控制权后，数据的传送便由该DMA接口进行管理。</p>
-<h6 id="DMA-传送过程示意"><a href="#DMA-传送过程示意" class="headerlink" title="DMA 传送过程示意"></a>DMA 传送过程示意</h6><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926203301196.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926203301196">
+<h6 id="DMA-传送过程示意"><a href="#DMA-传送过程示意" class="headerlink" title="DMA 传送过程示意"></a>DMA 传送过程示意</h6>
 
 <p>以数据输入为例：</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926203631295.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926203631295">
+
 
 <ol>
 <li>当设备准备好一个字时，发出选通信号，将该字读到DMA的数据级冲寄存器(BR)中，表示数据缓冲寄存器“满”（如果I&#x2F;O设备是面向字符的，则一次读入一个字节，组装成一个字）。</li>
@@ -670,7 +670,7 @@
 <li>判断数据块是否传送结束，若未结束，则继续传送；若已结束，（宇计数器溢出），则向CPU申请程序中断，标志数据块传送结束。</li>
 </ol>
 <p>以数据输出为例：</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926203744324.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926203744324">
+
 
 <ol>
 <li>当DMA数据缓冲寄存器已将输出数据送至&#x2F;0设备后，表示数据缓冲寄存器已“空”。</li>
@@ -685,10 +685,10 @@
 <li>判断数据块是否已传送完毕，若未完毕，继续传送；若已传送完毕，则向CPU申请程序中断。</li>
 </ol>
 <h6 id="后处理"><a href="#后处理" class="headerlink" title="后处理"></a>后处理</h6><p>当DMA的中断请求得到响应后，CPU停止原程序的执行，转去执行中断服务程序，做一些DMA的结束工作的后处理部分。这包括校验送入主存的数据是否正确；决定是否继续用DMA传送其他数据块，若继续传送，则又要对DMA接口进行初始化，若不需要传送，则停止外设；测试在传送过程中是否发生错误，若出错，则转错误诊断及处理错误程序。</p>
-<h5 id="DMA-接口与系统的连接方式"><a href="#DMA-接口与系统的连接方式" class="headerlink" title="DMA 接口与系统的连接方式"></a>DMA 接口与系统的连接方式</h5><h6 id="具有公共请求线的-DMA-请求"><a href="#具有公共请求线的-DMA-请求" class="headerlink" title="具有公共请求线的 DMA 请求"></a>具有公共请求线的 DMA 请求</h6><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926204157036.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926204157036">
+<h5 id="DMA-接口与系统的连接方式"><a href="#DMA-接口与系统的连接方式" class="headerlink" title="DMA 接口与系统的连接方式"></a>DMA 接口与系统的连接方式</h5><h6 id="具有公共请求线的-DMA-请求"><a href="#具有公共请求线的-DMA-请求" class="headerlink" title="具有公共请求线的 DMA 请求"></a>具有公共请求线的 DMA 请求</h6>
 
 <p>为具有公共请求线的DMA请求方式，若干个DMA接口通过一条公用的DMA请求线向CPU申请总线控制权。CPU发出响应信号，用链式查询方式通过DMA接口，首先选中的设备获得总线控制权，即可占用总线与主存传送信息。</p>
-<h6 id="独立的-DMA-请求"><a href="#独立的-DMA-请求" class="headerlink" title="独立的 DMA 请求"></a>独立的 DMA 请求</h6><img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926204213449.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926204213449">
+<h6 id="独立的-DMA-请求"><a href="#独立的-DMA-请求" class="headerlink" title="独立的 DMA 请求"></a>独立的 DMA 请求</h6>
 
 <p>)是独立的DMA请求方式，每一个DMA接口各有一对独立的DMA请求线和DMA响应线，它由CPU的优先级判别机构裁决首先响应哪个请求，并在响应线上发出响应信号，被获得响应信号的DMA接口便可控制总线与主存传送数据。</p>
 <p>与程序中断方式相比，DMA方式有如下特点。</p>
@@ -700,13 +700,13 @@
 <li>DMA的优先级比程序中断的优先级高。</li>
 </ul>
 <h4 id="DMA-接口的类型"><a href="#DMA-接口的类型" class="headerlink" title="DMA 接口的类型"></a>DMA 接口的类型</h4><h5 id="选择型"><a href="#选择型" class="headerlink" title="选择型"></a>选择型</h5><p>这种类型的DMA接口的基本组成，它的主要特点是在物理上可连接多个设备，在逻辑上只允许连接一个设备，即在某一段时间内，DMA接口只能为一个设备服务，关键是在预处理时将所选设备的设备号送人设备地址寄存器。</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926204614841.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926204614841">
+
 
 <h5 id="多路型"><a href="#多路型" class="headerlink" title="多路型"></a>多路型</h5><p>多路型DMA接口不仅在物理上可以连接多个设备，而且在逻辑上也允许多个设备同时工作，各个设备采用字节交叉的方式通过DMA接口进行数据传送。在多路型DMA接口中，为每个与它连接的设备都设置了一套寄存器，分别存放各自的传送参数。分</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926204638266.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926204638266">
+
 
 <p>多路型 DMA 接口的工作原理</p>
-<img src="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%9B%9B/image-20230926204937986.png" srcset="/img/loading.gif" lazyload class="" title="image-20230926204937986">
+
 
 <p>上图是多路型DMA接口工作原理示意图。图中磁盘、磁带、打印机同时工作。磁盘、磁带、打印机分别每隔30us、45us、150us向DM接口发DMA请求，磁盘的优先级高于磁带，磁带的优先级高于打印机。</p>
 <p>假设DMA接口完成一次DMA数据传送需5s,由图可见，打印机首先发请求，故DMA接口首先为打印机服务(T1);接着磁盘、磁带同时又有DMA请求，DMA接口按优先级别先响应磁盘请求(T2),再响应磁带请求(T3),每次DMA传送都是一个字节。这样，在90多微秒的时间里，DMA接口为打印机服务一次(T1),为磁盘服务4次(T2、T4、T6、T7),为磁带服务3次(T3、T5、T8)。可见DMA接口还有很多空闲时间，可再容纳更多的设备。</p>
@@ -757,12 +757,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/09/26/HTML/" title="HTML">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTML</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/18/mysql%E7%AF%87/" title="mysql基础篇">
-                        <span class="hidden-mobile">mysql基础篇</span>
+                      <a href="/2023/09/18/mysql%E7%AF%87/" title="MySQL">
+                        <span class="hidden-mobile">MySQL</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
