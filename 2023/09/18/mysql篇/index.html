@@ -16,16 +16,16 @@
   <meta name="author" content="李呀李嘉图">
   <meta name="keywords" content="">
   
-    <meta name="description" content="数据库操作创建一个数据库 1CREAT DATABASE RUNOOB;  删除一个数据库 1DROP DATABASE RUNOOB;  选择一个数据库 1USE RUNOOB;  数据类型数值类型   类型 大小 范围（有符号） 范围（无符号） 用途    TINYINT 1 Bytes (-128，127) (0，255) 小整数值   SMALLINT 2 Bytes (-32 768，3">
+    <meta name="description" content="数据类型数值类型   类型 大小 范围（有符号） 范围（无符号） 用途    TINYINT 1 Bytes (-128，127) (0，255) 小整数值   SMALLINT 2 Bytes (-32 768，32 767) (0，65 535) 大整数值   MEDIUMIN 3 Bytes (-8 388 608，8 388 607) (0，16 777 215) 大整数值   INT或I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL">
 <meta property="og:url" content="http://example.com/2023/09/18/mysql%E7%AF%87/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库操作创建一个数据库 1CREAT DATABASE RUNOOB;  删除一个数据库 1DROP DATABASE RUNOOB;  选择一个数据库 1USE RUNOOB;  数据类型数值类型   类型 大小 范围（有符号） 范围（无符号） 用途    TINYINT 1 Bytes (-128，127) (0，255) 小整数值   SMALLINT 2 Bytes (-32 768，3">
+<meta property="og:description" content="数据类型数值类型   类型 大小 范围（有符号） 范围（无符号） 用途    TINYINT 1 Bytes (-128，127) (0，255) 小整数值   SMALLINT 2 Bytes (-32 768，32 767) (0，65 535) 大整数值   MEDIUMIN 3 Bytes (-8 388 608，8 388 607) (0，16 777 215) 大整数值   INT或I">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/background/mysql-logo.png">
 <meta property="article:published_time" content="2023-09-18T14:07:32.000Z">
-<meta property="article:modified_time" content="2023-09-27T09:57:42.324Z">
+<meta property="article:modified_time" content="2023-10-01T08:26:27.534Z">
 <meta property="article:author" content="李呀李嘉图">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary_large_image">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          16k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          13 分钟
+          137 分钟
         
       </span>
     
@@ -279,16 +279,7 @@
             
               <div class="markdown-body">
                 
-                <h4 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h4><p>创建一个数据库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREAT DATABASE RUNOOB;<br></code></pre></td></tr></table></figure>
-
-<p>删除一个数据库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">DROP DATABASE RUNOOB;<br></code></pre></td></tr></table></figure>
-
-<p>选择一个数据库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">USE RUNOOB;<br></code></pre></td></tr></table></figure>
-
-<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h6 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h6><table>
+                <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h6 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h6><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -455,16 +446,288 @@
 <td>极大文本数据</td>
 </tr>
 </tbody></table>
-<h4 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h4><p>创建MySQL数据表需要以下信息：</p>
+<h4 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h4><h6 id="创建一个数据库"><a href="#创建一个数据库" class="headerlink" title="创建一个数据库"></a>创建一个数据库</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREAT DATABASE 数据库名;<br></code></pre></td></tr></table></figure>
+
+<h6 id="查看MySQL服务器中的所有的数据库"><a href="#查看MySQL服务器中的所有的数据库" class="headerlink" title="查看MySQL服务器中的所有的数据库"></a>查看MySQL服务器中的所有的数据库</h6><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">show databases<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="删除一个数据库"><a href="#删除一个数据库" class="headerlink" title="删除一个数据库"></a>删除一个数据库</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">DROP DATABASE 数据库名称;<br></code></pre></td></tr></table></figure>
+
+<h6 id="选择一个数据库"><a href="#选择一个数据库" class="headerlink" title="选择一个数据库"></a>选择一个数据库</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">USE 数据库名字;<br></code></pre></td></tr></table></figure>
+
+<h6 id="查看正在使用的数据库"><a href="#查看正在使用的数据库" class="headerlink" title="查看正在使用的数据库"></a>查看正在使用的数据库</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select database();<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h4><p>创建MySQL数据表需要以下信息：</p>
 <ul>
 <li>表名</li>
 <li>表字段名</li>
 <li>定义每个表字段</li>
 </ul>
-<p>以下为创建MySQL数据表的SQL通用语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE table_name (column_name column_type);<br></code></pre></td></tr></table></figure>
+<h5 id="创建一个表"><a href="#创建一个表" class="headerlink" title="创建一个表"></a>创建一个表</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE if not exists 表名(<br>字段名  类型(长度) [约束],<br>字段名  类型(长度) [约束],<br>   ...<br>);<br>类型：<br>      varchar(n)字符串<br>      int   整形<br>      double浮点<br>      date   时间<br>      timestamp时间戳<br>约束：<br>primary key  主键，被主键修饰字段中的数据，不能重复、不能为null。<br><br></code></pre></td></tr></table></figure>
 
-<p>为RUNOOB数据库创建一张表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#创建分类表<br>CREATE TABLE category ( <br>cid varchar(20) primary key,#分类ID <br>cname VARCHAR(100) #分类名称<br>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="验证表结构"><a href="#验证表结构" class="headerlink" title="验证表结构"></a>验证表结构</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># SHOW CREATE TABLE 表名\G<br>SHOW CREATE TABLE category\G<br></code></pre></td></tr></table></figure>
+
+<h5 id="查看数据库中的所有表"><a href="#查看数据库中的所有表" class="headerlink" title="查看数据库中的所有表"></a>查看数据库中的所有表</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">show tables;<br></code></pre></td></tr></table></figure>
+
+<h5 id="查看表结构："><a href="#查看表结构：" class="headerlink" title="查看表结构："></a>查看表结构：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># desc 表名;<br>desc category;<br></code></pre></td></tr></table></figure>
+
+<h5 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># drop table 表名;<br>drop table category;<br></code></pre></td></tr></table></figure>
+
+<h5 id="修改表结构格式"><a href="#修改表结构格式" class="headerlink" title="修改表结构格式"></a>修改表结构格式</h5><h6 id="添加列："><a href="#添加列：" class="headerlink" title="添加列："></a>添加列：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#alter table 表名 add 列名 类型(长度) [约束];注意是` 而不是’<br>ALTER TABLE category ADD `desc` VARCHAR(20); <br></code></pre></td></tr></table></figure>
+
+<h6 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#alter table 表名 change 旧列名 新列名 类型(长度) 约束;<br>ALTER TABLE category CHANGE `desc` description VARCHAR(30);<br></code></pre></td></tr></table></figure>
+
+<h6 id="删除列："><a href="#删除列：" class="headerlink" title="删除列："></a>删除列：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#alter table 表名 drop 列名;<br>ALTER TABLE category DROP description;<br></code></pre></td></tr></table></figure>
+
+<h6 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名:"></a>修改表名:</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#rename table 表名 to 新表名;<br>RENAME TABLE `category` TO category2;<br></code></pre></td></tr></table></figure>
+
+<h4 id="数据库操作语言"><a href="#数据库操作语言" class="headerlink" title="数据库操作语言"></a>数据库操作语言</h4><h5 id="插入表记录：insert"><a href="#插入表记录：insert" class="headerlink" title="插入表记录：insert"></a>插入表记录：insert</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>向表中插入数据<br>insert into 表 (字段1,字段2,字段3...) values(值1,值2,值3...);<br>向表中插入所有字段,字段的顺序为创建表时的顺序<br>insert into 表 values(值1,值2,值3..);<br>值与字段必须对应，个数相同，类型相同<br>值的数据大小必须在字段的长度范围内<br>除了数值类型外，其它的字段类型的值必须使用引号引起。（建议单引号）<br>如果要插入空值，可以不写字段，或者插入 null。	<br>*/<br>INSERT INTO category(cid,cname) VALUES(&#x27;c001&#x27;,&#x27;电器&#x27;); <br>INSERT INTO category(cid,cname) VALUES(&#x27;c002&#x27;,&#x27;服饰&#x27;); <br>INSERT INTO category(cid,cname) VALUES(&#x27;c003&#x27;,&#x27;化妆品&#x27;); <br>INSERT INTO category(cid,cname) VALUES(&#x27;c004&#x27;,&#x27;书籍&#x27;);<br>INSERT INTO category(cid) VALUES(&#x27;c005&#x27;); <br>insert into category values(&#x27;06&#x27;,&#x27;玩具&#x27;),(&#x27;07&#x27;,&#x27;蔬菜&#x27;);<br></code></pre></td></tr></table></figure>
+
+<h5 id="更新表记录：update"><a href="#更新表记录：update" class="headerlink" title="更新表记录：update"></a>更新表记录：update</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>更新所有记录的指定字段<br>update 表名 set 字段名=值,字段名=值,...;<br>更新符合条件记录的指定字段<br>update 表名 set 字段名=值,字段名=值,... where 条件;<br>列名的类型与修改的值要一致.<br>修改值得时候不能超过最大长度.<br>除了数值类型外，其它的字段类型的值必须使用引号引起<br><br>*/<br>update category set cname  = &#x27;家电’; <br>update category set cname  = &#x27;水果&#x27; where cid = &#x27;c001&#x27;; <br></code></pre></td></tr></table></figure>
+
+<h5 id="删除记录：delete"><a href="#删除记录：delete" class="headerlink" title="删除记录：delete"></a>删除记录：delete</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>delete from 表名 [where 条件];<br>或者清空表<br>truncate table 表名;  <br>*/<br>#删除cid为005的纪录<br>delete from category where cid = &#x27;005&#x27;; <br>#清空表数据<br>truncate category;  <br></code></pre></td></tr></table></figure>
+
+<h4 id="SQL约束"><a href="#SQL约束" class="headerlink" title="SQL约束"></a>SQL约束</h4><h5 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h5><p>PRIMARY KEY 约束唯一标识数据库表中的每条记录。</p>
+<p>1.主键必须包含唯一的值。</p>
+<p>2.主键列不能包含 NULL 值。</p>
+<p>3.每个表都应该有一个主键，并且每个表只能有一个主键。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 方式一：创建表时，在字段描述处，声明指定字段为主键：<br>CREATE TABLE persons<br>(<br> id int PRIMARY KEY,<br> lastName varchar(255),<br> firstName varchar(255),<br> address varchar(255),<br> city varchar(255)<br>);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>方式二：创建表时，在constraint约束区域，声明指定字段为主键：<br>格式：[constraint 名称] primary key (字段列表)<br>关键字constraint可以省略，如果需要为主键命名，constraint不能省略，主键名称一般没用。<br>字段列表需要使用小括号括住，如果有多字段需要使用逗号分隔。声明两个以上字段为主键，我们称为联合主键。<br>*/<br>CREATE TABLE persons2<br>(<br>  firstName varchar(255),<br>  lastName  varchar(255),<br>  address   varchar(255),<br>  city      varchar(255),<br>  CONSTRAINT pk_personID PRIMARY KEY (firstName, lastName)<br>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="删除主键"><a href="#删除主键" class="headerlink" title="删除主键"></a>删除主键</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ALTER TABLE persons DROP PRIMARY KEY;<br></code></pre></td></tr></table></figure>
+
+<h5 id="自动增长列"><a href="#自动增长列" class="headerlink" title="自动增长列"></a>自动增长列</h5><p>我们通常希望在每次插入新记录时，数据库自动生成字段的值。</p>
+<p>我们可以在表中使用 auto_increment（自动增长列）关键字，自动增长列类型必须是整型，自动增长列必须为键(一般是主键)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE persons4<br>(<br>  id      int PRIMARY KEY AUTO_INCREMENT,<br>  lastName  varchar(255),<br>  firstName varchar(255),<br>  address   varchar(255),<br>  city      varchar(255)<br>);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#向persons添加数据时，可以不为Id字段设置值，也可以设置成null，数据库将自动维护主键值：<br>INSERT INTO persons4 (firstName,lastName) VALUES (&#x27;Bill&#x27;,&#x27;Gates&#x27;)<br>INSERT INTO persons4 (id,firstName,lastName) VALUES (NULL,&#x27;Bill&#x27;,&#x27;Gates&#x27;)<br></code></pre></td></tr></table></figure>
+
+<p>扩展：默认AUTO_INCREMENT 的开始值是 1，如果希望修改起始值，请使用下列 SQL 语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ALTER TABLE persons AUTO_INCREMENT=100<br></code></pre></td></tr></table></figure>
+
+<h5 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h5><p>NOT NULL 约束强制列不接受 NULL 值。</p>
+<p>NOT NULL 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或者更新记录。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE persons5<br>(<br>  id      int          NOT NULL,<br>  lastName  varchar(255) NOT NULL,<br>  firstName varchar(255),<br>  address   varchar(255),<br>  city      varchar(255)<br>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h5><p>lUNIQUE 约束唯一标识数据库表中的每条记录。</p>
+<p>lUNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。</p>
+<p>lPRIMARY KEY 拥有自动定义的 UNIQUE 约束。</p>
+<p>请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE persons<br>(<br>  id      int UNIQUE,<br>  lastName  varchar(255) NOT NULL,<br>  firstName varchar(255) UNIQUE ,<br>  address   varchar(255),<br>  city      varchar(255)<br>)<br></code></pre></td></tr></table></figure>
+
+<h4 id="DQL查询操作"><a href="#DQL查询操作" class="headerlink" title="DQL查询操作"></a>DQL查询操作</h4><h5 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select [distinct]<br>*| 列名,列名<br>from 表<br>where 条件<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#创建商品表：<br>create table product(<br> pid int primary key,<br> pname varchar(20),<br> price double,<br> category_id varchar(32)<br>);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(1,&#x27;联想&#x27;,5000,&#x27;c001&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(2,&#x27;海尔&#x27;,3000,&#x27;c001&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(3,&#x27;雷神&#x27;,5000,&#x27;c001&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(4,&#x27;杰克琼斯&#x27;,800,&#x27;c002&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(5,&#x27;真维斯&#x27;,200,&#x27;c002&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(6,&#x27;花花公子&#x27;,440,&#x27;c002&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(7,&#x27;劲霸&#x27;,2000,&#x27;c002&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(8,&#x27;香奈儿&#x27;,800,&#x27;c003&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(9,&#x27;相宜本草&#x27;,200,&#x27;c003&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(10,&#x27;面霸&#x27;,5,&#x27;c003&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(11,&#x27;好想你枣&#x27;,56,&#x27;c004&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(12,&#x27;香飘飘奶茶&#x27;,1,&#x27;c005&#x27;);<br>INSERT INTO product(pid,pname,price,category_id) VALUES(13,&#x27;海澜之家&#x27;,1,&#x27;c002&#x27;);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#1.查询所有的商品.  <br>select *  from product;<br>#2.查询商品名和商品价格. <br>select pname,price from product;<br>#3.别名查询.使用的关键字是as（as可以省略的）.  <br>#3.1表别名: <br>select * from product as p;<br>#3.2列别名：<br>select pname as pn from product; <br>#4.去掉重复值.  <br>select distinct price from product;<br>#5.查询结果是表达式（运算查询）：将所有商品的价格+10元进行显示.<br>select pname,price+10 from product;<br></code></pre></td></tr></table></figure>
+
+<h5 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a><strong>条件查询</strong></h5><img src="/2023/09/18/mysql%E7%AF%87/image-20230929154858166.png" srcset="/img/loading.gif" lazyload class="" title="image-20230929154858166">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#查询商品名称为“花花公子”的商品所有信息：<br>select * from product where pname=&#x27;花花公子&#x27;;<br>#查询价格为800商品<br>select * from product where price=800;<br>#查询价格不是800的所有商品<br>select * from product where price&lt;&gt;800;<br>select * from product where price!=800;<br>select * from product where not(price=800);<br>#查询商品价格大于60元的所有商品信息<br>select * from product where price&gt;60;<br>#查询商品价格在200到1000之间所有商品<br>select * from product where price&gt;=200 and price&lt;=1000;<br>select * from product where price between 200 and 1000;<br>#查询商品价格是200或800的所有商品<br>select * from product where price=200 or price=800;<br>select * from product where price in(200,800);<br>#查询含有&#x27;霸&#x27;字的所有商品<br>select * from product where pname like&#x27;%霸%&#x27;;<br>#查询以&#x27;香&#x27;开头的所有商品<br>select * from product where pname like&#x27;香%&#x27;;<br>#查询第二个字为&#x27;想&#x27;的所有商品<br>select * from product where pname like&#x27;_想%&#x27;;<br>#查询没有分类的商品<br>select * from product where category_id is null;<br>#查询有分类的商品<br>select * from product where category_id is not null;<br></code></pre></td></tr></table></figure>
+
+<h5 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h5><p>通过order by语句，可以将查询出的结果进行排序。暂时放置在select语句的最后。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>SELECT * FROM 表名 ORDER BY 排序字段 ASC|DESC;<br> ASC 升序 (默认)<br> DESC 降序<br>*/<br>#1.使用价格排序(降序)<br>select * from product order by price desc;<br>#2.在价格排序(降序)的基础上，以分类排序(降序)<br>select * from product order by price desc,category_id desc;<br>#3.显示商品的价格(去重复)，并排序(降序)<br>select distinct price from product order by price desc;<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="聚合查询"><a href="#聚合查询" class="headerlink" title="聚合查询"></a>聚合查询</h5><p>之前我们做的查询都是横向查询，它们都是根据条件一行一行的进行判断，而使用聚合函数查询是纵向查询，它是对一列的值进行计算，然后返回一个单一的值；另外聚合函数会忽略空值。</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20230929160953036.png" srcset="/img/loading.gif" lazyload class="" title="image-20230929160953036">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#1 查询商品的总条数<br>select count(*) from product;<br>#2 查询价格大于200商品的总条数<br>select count(*) from product where price&gt;200;<br>#3 查询分类为&#x27;c001&#x27;的所有商品的总和<br>select sum(price) from product where category_id=&#x27;c001&#x27;;<br>#4 查询分类为&#x27;c002&#x27;所有商品的平均价格<br>select avg(price) from product where category_id=&#x27;c002&#x27;;<br>#5 查询商品的最大价格和最小价格<br>select max(price),min(price) from product;<br></code></pre></td></tr></table></figure>
+
+<h5 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h5><p>分组查询是指使用group by字句对查询信息进行分组。</p>
+<p>格式：</p>
+<p>SELECT 字段1,字段2… FROM 表名 GROUP BY 分组字段 HAVING 分组条件;</p>
+<p>分组操作中的having子语句，是用于在分组后对数据进行过滤的，作用类似于where条件。</p>
+<p>having与where的区别:</p>
+<p>1).having是在分组后对数据进行过滤.,where是在分组前对数据进行过滤</p>
+<p>2).having后面可以使用分组函数(统计函数),where后面不可以使用分组函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#1 统计各个分类商品的个数<br>select category_id,count(*) from product group by category_id;<br>#2 统计各个分类商品的个数,且只显示个数大于1的信息<br>select category_id,count(*) from product group by category_id having count(*)&gt;1;<br></code></pre></td></tr></table></figure>
+
+<h5 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h5><p>分页查询在项目开发中常见，由于数据量很大，显示屏长度有限，因此对数据需要采取分页显示方式。例如数据共有30条，每页显示5条，第一页显示1-5条，第二页显示6-10条。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>SELECT 字段1，字段2... FROM 表名 LIMIT M,N<br>M: 整数，表示从第几条索引开始，计算方式 （当前页-1）*每页显示条数<br>N: 整数，表示查询多少条数据<br>SELECT 字段1，字段2... FROM 表明 LIMIT 0,5<br>SELECT 字段1，字段2... FROM 表明 LIMIT 5,5<br>*/<br><br># 查询第一条到第五条商品信息<br>select * from product limit 0,5;<br># 查询第六条到第十条商品信息<br>select * from product limit 5,5;<br></code></pre></td></tr></table></figure>
+
+<h5 id="insert-into-select语句"><a href="#insert-into-select语句" class="headerlink" title="insert into select语句"></a>insert into select语句</h5><p>INSERT INTO SELECT 语句从一个表复制数据，然后把数据插入到一个已存在的表中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*<br>INSERT INTO table2<br>SELECT column_name(s)<br>FROM table1;<br>*/<br>create table product2(<br> pid int primary key,<br> pname varchar(20),<br> price double<br>);<br>insert into product2 select pid,pname,price from product where category_id = &#x27;c001&#x27;;<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h4><p>实际开发中，一个项目通常需要很多张表才能完成。例如：一个商城项目就需要分类表(category)、商品(products)、订单表(orders)等多张表。且这些表的数据之间存在一定的关系，接下来我们将在单表的基础上，一起学习多表方面的知识。</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001104203985.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001104203985">
+
+<h5 id="表与表之间的关系"><a href="#表与表之间的关系" class="headerlink" title="表与表之间的关系"></a>表与表之间的关系</h5><p>一对多关系：常见实例：客户和订单，分类和商品，部门和员工.</p>
+<p>一对多建表原则：在从表(多方)创建一个字段，字段作为外键指向主表(一方)的主键.</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001104323733.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001104323733">
+
+<h5 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h5><p>现在我们有两张表“分类表”和“商品表”，为了表明商品属于哪个分类，通常情况下，我们将在商品表上添加一列，用于存放分类cid的信息，此列称为：外键</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001104458230.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001104458230">
+
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001104503174.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001104503174">
+
+<p>此时“分类表category”称为：主表，“cid”我们称为主键。“商品表products”称为：从表，category_id称为外键。我们通过主表的主键和从表的外键来描述主外键关系，呈现就是一对多关系。</p>
+<p>外键特点：</p>
+<ul>
+<li>从表外键的值是对主表主键的引用。</li>
+<li>从表外键类型，必须与主表主键类型一致</li>
+</ul>
+<h6 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysq">alter table 从表 add [constraint] [外键名称] foreign key (从表外键字段名) references 主表 (主表的主键);<br></code></pre></td></tr></table></figure>
+
+<p>[外键名称] 用于删除外键约束的，一般建议“_fk”结尾： alter table 从表 drop foreign key 外键名称</p>
+<h5 id="一对多操作"><a href="#一对多操作" class="headerlink" title="一对多操作"></a>一对多操作</h5><img src="/2023/09/18/mysql%E7%AF%87/image-20231001104903570.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001104903570">
+
+<ul>
+<li>category分类表，为一方，也就是主表，必须提供主键cid</li>
+<li>products商品表，为多方，也就是从表，必须提供外键category_id</li>
+</ul>
+<p>注意插入数据前要先确保外键对应的表包含数据，如果关联的表没有数据，此时该表的主键值作为另一表的外键值，插入数据就会报错。比如A表的主键id字段是B表的外键，给B表插入数据前必须保证A表的主键至少是有数据的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs mysql">###创建分类表<br>create table category(<br>  cid varchar(32) PRIMARY KEY ,<br>  cname varchar(100)  #分类名称<br>);<br><br># 商品表<br>CREATE TABLE products (<br>  pid varchar(32) PRIMARY KEY  ,<br>  name VARCHAR(40) ,<br>  price DOUBLE ,<br>  category_id varchar(32)<br>);<br>#添加约束<br>alter table products add constraint product_fk foreign key (category_id) references category (cid);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#1 向分类表中添加数据<br>insert into category values(&#x27;c001&#x27;,&#x27;服饰&#x27;);<br><br>#2 向商品表添加普通数据，含有外键信息(category表中存在这条数据)<br>INSERT INTO products (pid ,pname ,category_id) VALUES(&#x27;p002&#x27;,&#x27;商品名称2&#x27;,&#x27;c001&#x27;);<br><br>#3 向商品表添加普通数据，含有外键信息(category表中不存在这条数据) -- 失败,异常<br>INSERT INTO products (pid ,pname ,category_id) VALUES(&#x27;p003&#x27;,&#x27;商品名称2&#x27;,&#x27;c999&#x27;);<br><br>#4 删除指定分类(分类被商品使用) -- 执行异常<br>DELETE FROM category WHERE cid = &#x27;c001&#x27;;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>INNER JOIN（内连接,或等值连接）</strong>：获取两个表中字段匹配关系的记录。</li>
+<li><strong>LEFT JOIN（左连接）：</strong>获取左表所有记录，即使右表没有对应匹配的记录。</li>
+<li><strong>RIGHT JOIN（右连接）：</strong> 与 LEFT JOIN 相反，用于获取右表所有记录，即使左表没有对应匹配的记录。</li>
+</ul>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001114342522.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001114342522">
+
+<h5 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h5><p>子查询：一条select语句结果作为另一条select语法一部分（查询条件，查询结果，表等）。</p>
+<p>select ….查询字段 … from … 表.. where … 查询条件</p>
+<h4 id="事物"><a href="#事物" class="headerlink" title="事物"></a>事物</h4><p>事务是一组操作的集合，它是一个不可分割的工作单位，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。</p>
+<p>就比如: 张三给李四转账1000块钱，张三银行账户的钱减少1000，而李四银行账户的钱要增加1000。 这一组操作就必须在一个事务的范围内，要么都成功，要么都失败。</p>
+<p>正常情况: 转账这个操作, 需要分为以下这么三步来完成 , 三步完成之后, 张三减少1000, 而李四增加1000, 转账成功 :</p>
+<p>异常情况: 转账这个操作, 也是分为以下这么三步来完成 , 在执行第三步是报错了, 这样就导致张三减少1000块钱, 而李四的金额没变, 这样就造成了数据的不一致, 就出现问题了。</p>
+<p>为了解决上述的问题，就需要通过数据的事务来完成，我们只需要在业务逻辑执行之前开启事务，执行完毕后提交事务。如果执行过程中报错，则回滚事务，把数据恢复到事务开始之前的状态。</p>
+<p>注意： 默认MySQL的事务是自动提交的，也就是说，当执行完一条DML语句时，MySQL会立即隐式的提交事务</p>
+<h5 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h5><h6 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs msyql">drop table if exists account;<br>create table account(<br>id int primary key AUTO_INCREMENT comment &#x27;ID&#x27;,<br>name varchar(10) comment &#x27;姓名&#x27;,<br>money double(10,2) comment &#x27;余额&#x27;<br>) comment &#x27;账户表&#x27;;<br>insert into account(name, money) VALUES (&#x27;张三&#x27;,2000), (&#x27;李四&#x27;,2000);<br></code></pre></td></tr></table></figure>
+
+<h5 id="事务四大特性"><a href="#事务四大特性" class="headerlink" title="事务四大特性"></a>事务四大特性</h5><ul>
+<li>原子性（Atomicity）：事务是不可分割的最小操作单元，要么全部成功，要么全部失败。</li>
+<li>一致性（Consistency）：事务完成时，必须使所有的数据都保持一致状态。</li>
+<li>隔离性（Isolation）：数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行。</li>
+<li>持久性（Durability）：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的。</li>
+</ul>
+<h5 id="并发事务问题"><a href="#并发事务问题" class="headerlink" title="并发事务问题"></a>并发事务问题</h5><p>赃读：一个事务读到另外一个事务还没有提交的数据。</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001121950972.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001121950972">
+
+<p>不可重复读：一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001122024209.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001122024209">
+
+<p> 幻读：一个事务按照条件查询数据时，没有对应的数据行，但是在插入数据时，又发现这行数据已经存在，好像出现了 “幻影”。</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001122047944.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001122047944">
+
+<h5 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h5><img src="/2023/09/18/mysql%E7%AF%87/image-20231001122114993.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001122114993">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 查看事务隔离级别<br>SELECT @@TRANSACTION_ISOLATION;<br># 设置事务隔离级别<br>SET [ SESSION | GLOBAL ] TRANSACTION ISOLATION LEVEL &#123; READ UNCOMMITTED |<br>READ COMMITTED | REPEATABLE READ | SERIALIZABLE &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>索引是 MySQL 中一种十分重要的数据库对象。它是数据库性能调优技术的基础，常用于实现数据的快速检索。</p>
+<p> 索引就是根据表中的一列或若干列按照一定顺序建立的列值与记录行之间的对应关系表，实质上是一张描述索引列的列值与原表中记录行之间一一对应关系的有序表。</p>
+<p>在 MySQL 中，通常有以下两种方式访问数据库表的行数据：</p>
+<ol>
+<li>顺序访问</li>
+</ol>
+<p>顺序访问是在表中实行全表扫描，从头到尾逐行遍历，直到在无序的行数据中找到符合条件的目标数据。这种方式实现比较简单，但是当表中有大量数据的时候，效率非常低下。</p>
+<ol start="2">
+<li>索引访问</li>
+</ol>
+<p>索引访问是通过遍历索引来直接访问表中记录行的方式。使用这种方式的前提是对表建立一个索引，在列上创建了索引之后，查找数据时可以直接根据该列上的索引找到对应记录行的位置，从而快捷地查找到数据。索引存储了指定列数据值的指针，根据指定的排序顺序对这些指针排序。</p>
+<h5 id="索引的分类"><a href="#索引的分类" class="headerlink" title="索引的分类"></a>索引的分类</h5><p>根据存储方式的不同，MySQL 中常用的索引在物理上分为以下两类。</p>
+<p>B-树索引</p>
+<p>B-树索引又称为 BTREE 索引，目前大部分的索引都是采用 B-树索引来存储的。B-树索引是一个典型的数据结构，基于这种树形数据结构，表中的每一行都会在索引上有一个对应值。因此，在表中进行数据查询时，可以根据索引值一步一步定位到数据所在的行。</p>
+<p>哈希索引</p>
+<p>哈希（Hash）一般翻译为“散列”，也有直接音译成“哈希”的，就是把任意长度的输入（又叫作预映射，pre-image）通过散列算法变换成固定长度的输出，该输出就是散列值。</p>
+<p>HASH 索引不是基于树形的数据结构查找数据，而是根据索引列对应的哈希值的方法获取表的记录行。</p>
+<h5 id="索引的操作"><a href="#索引的操作" class="headerlink" title="索引的操作"></a>索引的操作</h5><h6 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#语法：<br>#CREATE INDEX indexName ON mytable(username(length)); <br>#给category表的cname字段添加索引<br><br>create index index_cname on category (cname(20));<br></code></pre></td></tr></table></figure>
+
+<h5 id="修改表结构-添加索引"><a href="#修改表结构-添加索引" class="headerlink" title="修改表结构(添加索引)"></a>修改表结构(添加索引)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#语法：<br>#ALTER table tableName ADD INDEX indexName(columnName)<br><br>alter table products add index index_comment(price);<br></code></pre></td></tr></table></figure>
+
+<h5 id="查询索引"><a href="#查询索引" class="headerlink" title="查询索引"></a>查询索引</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#1、查看表中所有索引<br>SHOW INDEX FROM table_name;<br>#2、查看数据库所有索引<br>SELECT * FROM mysql.`innodb_index_stats` a WHERE a.`database_name` = &#x27;数据库名&#x27;;<br><br>#2、查看某一表索引<br>SELECT * FROM mysql.`innodb_index_stats` a WHERE a.`database_name` = &#x27;数据库名&#x27; and a.table_name like &#x27;%表名%&#x27;;<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#语法：<br>#DROP INDEX [indexName] ON mytable;<br>#执行<br><br>DROP INDEX indexName ON mytable;<br></code></pre></td></tr></table></figure>
+
+<h5 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h5><p>它与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组合必须唯一。它有以下几种创建方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 语法：<br># CREATE UNIQUE INDEX indexName ON mytable(username(length)) <br># 执行：<br><br>CREATE UNIQUE INDEX indexName ON mytable(username(16))<br><br># 删除索引<br># 语法：<br># DROP INDEX [indexName] ON mytable;<br># 执行：<br><br>alter table mytable drop index indexName;<br></code></pre></td></tr></table></figure>
+
+<p>虽然索引可以加快查询速度，提高 MySQL 的处理性能，但是过多地使用索引也会造成以下弊端：</p>
+<p>1.创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。</p>
+<p>2.除了数据表占数据空间之外，每一个索引还要占一定的物理空间。如果要建立聚簇索引，那么需要的空间就会更大。</p>
+<p>3.当对表中的数据进行增加、删除和修改的时候，索引也要动态地维护，这样就降低了数据的维护速度。</p>
+<p>4.对于那些在查询中很少使用或参考的列不应该创建索引。因为这些列很少使用到，所以有索引或者无索引并不能提高查询速度。相反，由于增加了索引，反而降低了系统的维护速度，并增大了空间要求。</p>
+<h4 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h4><h5 id="MySQL体系结构"><a href="#MySQL体系结构" class="headerlink" title="MySQL体系结构"></a>MySQL体系结构<img src="/2023/09/18/mysql%E7%AF%87/image-20231001155250052.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001155250052"></h5><ul>
+<li>连接层</li>
+</ul>
+<p>最上层是一些客户端和链接服务，包含本地sock 通信和大多数基于客户端&#x2F;服务端工具实现的类似于TCP&#x2F;IP的通信。主要完成一些类似于连接处理、授权认证、及相关的安全方案。在该层上引入了线程池的概念，为通过认证安全接入的客户端提供线程。同样在该层上可以实现基于SSL的安全链接。服务器也会为安全接入的每个客户端验证它所具有的操作权限。</p>
+<ul>
+<li>服务层</li>
+</ul>
+<p>第二层架构主要完成大多数的核心服务功能，如SQL接口，并完成缓存的查询，SQL的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如 过程、函数等。在该层，服务器会解析查询并创建相应的内部解析树，并对其完成相应的优化如确定表的查询的顺序，是否利用索引等，最后生成相应的执行操作。如果是select语句，服务器还会查询内部的缓存，如果缓存空间足够大，这样在解决大量读操作的环境中能够很好的提升系统的性能。</p>
+<ul>
+<li>引擎层</li>
+</ul>
+<p>存储引擎层， 存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API和存储引擎进行通信。不同的存储引擎具有不同的功能，这样我们可以根据自己的需要，来选取合适的存储引擎。数据库中的索引是在存储引擎层实现的。</p>
+<ul>
+<li>存储层</li>
+</ul>
+<p>数据存储层， 主要是将数据(如: redolog、undolog、数据、索引、二进制日志、错误日志、查询日志、慢查询日志等)存储在文件系统之上，并完成与存储引擎的交互。和其他数据库相比，MySQL有点与众不同，它的架构可以在多种不同场景中应用并发挥良好作用。主要体现在存储引擎上，插件式的存储引擎架构，将查询处理和其他的系统任务以及数据的存储提取分离。这种架构可以根据业务的需求和实际需要选择合适的存储引擎。</p>
+<h5 id="存储引擎介绍"><a href="#存储引擎介绍" class="headerlink" title="存储引擎介绍"></a>存储引擎介绍</h5><p>而对于存储引擎，他是mysql数据库的核心，我们也需要在合适的场景选择合适的存储引擎。接下来就来介绍一下存储引擎。</p>
+<p>存储引擎就是存储数据、建立索引、更新&#x2F;查询数据等技术的实现方式 。存储引擎是基于表的，而不是基于库的，所以存储引擎也可被称为表类型。我们可以在创建表的时候，来指定选择的存储引擎，如果没有指定将自动选择默认的存储引擎。</p>
+<h6 id="建表时指定存储引擎"><a href="#建表时指定存储引擎" class="headerlink" title="建表时指定存储引擎"></a>建表时指定存储引擎</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE 表名(<br>字段1 字段1类型 [ COMMENT 字段1注释 ] ,<br>......<br>字段n 字段n类型 [COMMENT 字段n注释 ]<br>) ENGINE = INNODB [ COMMENT 表注释 ] ;<br></code></pre></td></tr></table></figure>
+
+<h6 id="查询当前数据库支持的存储引擎"><a href="#查询当前数据库支持的存储引擎" class="headerlink" title="查询当前数据库支持的存储引擎"></a>查询当前数据库支持的存储引擎</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">show engines;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 创建表 my_myisam , 并指定MyISAM存储引擎<br>create table my_myisam(<br>id int,<br>name varchar(10)<br>) engine = MyISAM ;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 创建表 my_memory , 指定Memory存储引擎<br>create table my_memory(<br>id int,<br>name varchar(10)<br>) engine = Memory ;<br></code></pre></td></tr></table></figure>
+
+<h5 id="存储引擎特点"><a href="#存储引擎特点" class="headerlink" title="存储引擎特点"></a>存储引擎特点</h5><h6 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h6><p>InnoDB是一种兼顾高可靠性和高性能的通用存储引擎，在 MySQL 5.5 之后，InnoDB是默认的MySQL 存储引擎。</p>
+<p>特点:</p>
+<ul>
+<li>DML操作遵循ACID模型，支持事务；</li>
+<li>行级锁，提高并发访问性能；</li>
+<li>支持外键FOREIGN KEY约束，保证数据的完整性和正确性；</li>
+</ul>
+<p> 文件:</p>
+<p>xxx.ibd：xxx代表的是表名，innoDB引擎的每张表都会对应这样一个表空间文件，存储该表的表结构（frm-早期的 、sdi-新版的）、数据和索引。</p>
+<p>参数：innodb_file_per_table</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">show variables like &#x27;innodb_file_per_table&#x27;;<br></code></pre></td></tr></table></figure>
+
+<p>如果该参数开启，代表对于InnoDB引擎的表，每一张表都对应一个ibd文件。 我们直接打开MySQL的数据存放目录： C:\ProgramData\MySQL\MySQL Server 8.0\Data ， 这个目录下有很多文件夹，不同的文件夹代表不同的数据库，我们直接打开itcast文件夹。</p>
+<p>可以看到里面有很多的ibd文件，每一个ibd文件就对应一张表，比如：我们有一张表 account，就有这样的一个account.ibd文件，而在这个ibd文件中不仅存放表结构、数据，还会存放该表对应的索引信息。 而该文件是基于二进制存储的，不能直接基于记事本打开，我们可以使用mysql提供的一个指令 ibd2sdi ，通过该指令就可以从ibd文件中提取sdi信息，而sdi数据字典信息中就包含该表的表结构。</p>
+<p>逻辑存储结构：</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001161223812.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001161223812">
+
+<p>表空间 : InnoDB存储引擎逻辑结构的最高层，ibd文件其实就是表空间文件，在表空间中可以包含多个Segment段。</p>
+<p>段 : 表空间是由各个段组成的， 常见的段有数据段、索引段、回滚段等。InnoDB中对于段的管理，都是引擎自身完成，不需要人为对其控制，一个段中包含多个区。</p>
+<p>区 : 区是表空间的单元结构，每个区的大小为1M。 默认情况下， InnoDB存储引擎页大小为16K， 即一个区中一共有64个连续的页。</p>
+<p>页 : 页是组成区的最小单元，<strong>页也是****InnoDB</strong> <strong>存储引擎磁盘管理的最小单元</strong>，每个页的大小默认为 16KB。为了保证页的连续性，InnoDB 存储引擎每次从磁盘申请 4-5 个区。</p>
+<p>行 : InnoDB 存储引擎是面向行的，也就是说数据是按行进行存放的，在每一行中除了定义表时所指定的字段以外，还包含两个隐藏字段(后面会详细介绍)</p>
+<h6 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h6><p>MyISAM是MySQL早期的默认存储引擎。</p>
+<p>特点：</p>
+<ul>
+<li>不支持事务，不支持外键</li>
+<li>支持表锁，不支持行锁</li>
+<li>访问速度快</li>
+</ul>
+<p> 文件：</p>
+<ul>
+<li>xxx.sdi：存储表结构信息</li>
+<li>xxx.MYD: 存储数据</li>
+<li>xxx.MYI: 存储索引</li>
+</ul>
+<h6 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h6><p>Memory引擎的表数据时存储在内存中的，由于受到硬件问题、或断电问题的影响，只能将这些表作为临时表或缓存使用。</p>
+<p> 特点:</p>
+<ul>
+<li>内存存放</li>
+<li>hash索引（默认）</li>
+</ul>
+<p>文件：</p>
+<p>xxx.sdi：存储表结构信息</p>
+<h5 id="区别及特点"><a href="#区别及特点" class="headerlink" title="区别及特点"></a>区别及特点</h5><img src="/2023/09/18/mysql%E7%AF%87/image-20231001161645458.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001161645458">
+
+<h4 id="索引-1"><a href="#索引-1" class="headerlink" title="索引"></a>索引</h4><h5 id="索引概述"><a href="#索引概述" class="headerlink" title="索引概述"></a>索引概述</h5><h6 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h6><p>索引（index）是帮助MySQL高效获取数据的数据结构(有序)。在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据， 这样就可以在这些数据结构上实现高级查找算法，这种数据结构就是索引</p>
+<img src="/2023/09/18/mysql%E7%AF%87/image-20231001162022742.png" srcset="/img/loading.gif" lazyload class="" title="image-20231001162022742">
 
                 
               </div>
