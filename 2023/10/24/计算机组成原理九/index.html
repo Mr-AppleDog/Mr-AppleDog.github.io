@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李呀李嘉图">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本章以10条机器指令为例，介绍控制单元的两种设计方法，旨在使读者初步掌握设计控制单元的思路，为今后设计计算机打下初步基础。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="控制单元的设计（九）">
+<meta property="og:url" content="http://example.com/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本章以10条机器指令为例，介绍控制单元的两种设计方法，旨在使读者初步掌握设计控制单元的思路，为今后设计计算机打下初步基础。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/background/14.jpg">
+<meta property="article:published_time" content="2023-10-24T12:52:47.000Z">
+<meta property="article:modified_time" content="2023-10-25T11:57:33.651Z">
+<meta property="article:author" content="李呀李嘉图">
+<meta property="article:tag" content="基础知识">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/background/14.jpg">
+  
+  
+  
+  <title>控制单元的设计（九） - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/background/00.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="控制单元的设计（九）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-24 20:52" pubdate>
+          2023年10月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">控制单元的设计（九）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本章以10条机器指令为例，介绍控制单元的两种设计方法，旨在使读者初步掌握设计控制单元的思路，为今后设计计算机打下初步基础。</p>
+<span id="more"></span>
+
+<h3 id="组合逻辑设计"><a href="#组合逻辑设计" class="headerlink" title="组合逻辑设计"></a>组合逻辑设计</h3><h4 id="组合逻辑控制单元框图"><a href="#组合逻辑控制单元框图" class="headerlink" title="组合逻辑控制单元框图"></a>组合逻辑控制单元框图</h4><p>图示出了控制单元的外特性，其中指令的操作码是决定控制单元发出不同控制信号的关键。为了简化控制单元的逻辑，将存放在IR的n位操作码经过一个译码电路产生2^n^个输出，这样，每对应一种操作码便有一个输出送至CU。当然，若指令的操作码长度可变，指令译码线路将更复杂。</p>
+<p>控制单元的时钟输人实际上是一个脉冲序列，其频率即为机器的主频，它使CU能按一定的节拍(T)发出各种控制信号。节拍的宽度应满足数据信息通过数据总线从源到目的所需的时间。以时钟为计数脉冲，通过一个计数器，义称节拍发生器，便可产生一个与时钟周期等宽的节拍序列。如果将指令译码和节拍发生器从CU中分离出来，便可得简化的控制单元框图</p>
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024205600368.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024205600368">
+
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024205708402.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024205708402">
+
+<h4 id="微操作的节拍安排"><a href="#微操作的节拍安排" class="headerlink" title="微操作的节拍安排"></a>微操作的节拍安排</h4><p>假设机器采用同步控制，每个机器周期包含3个节拍，而且CPU内部结构，其中MAR和MDR分别直接和地址总线和数据总线相连，并假设IR的地址码部分与MAR之间有通路。</p>
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024205924958.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024205924958">安排微操作节拍时应注意以下3点。
+
+<ol>
+<li>有些微操作的次序是不容改变的，故安排微操作节拍时必须注意微操作的先后顺序。</li>
+<li>凡是被控制对象不同的微操作，若能在一个节拍内执行，应尽可能安排在同一个节拍内，以节省时间。</li>
+<li>如果有些微操作所占的时间不长，应该将它们安排在一个节拍内完成，并且允许这些微操作有先后次序。</li>
+</ol>
+<h5 id="取指周期微操作的节拍安排"><a href="#取指周期微操作的节拍安排" class="headerlink" title="取指周期微操作的节拍安排"></a>取指周期微操作的节拍安排</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210058741.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210058741">
+
+<h5 id="间址周期微操作的节拍安排"><a href="#间址周期微操作的节拍安排" class="headerlink" title="间址周期微操作的节拍安排"></a>间址周期微操作的节拍安排</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210128928.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210128928">
+
+<h5 id="执行周期微操作的节拍安排"><a href="#执行周期微操作的节拍安排" class="headerlink" title="执行周期微操作的节拍安排"></a>执行周期微操作的节拍安排</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210218135.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210218135">
+
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210245332.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210245332">
+
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210300297.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210300297">
+
+<h5 id="中断周期微操作的节拍安排"><a href="#中断周期微操作的节拍安排" class="headerlink" title="中断周期微操作的节拍安排"></a>中断周期微操作的节拍安排</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210330325.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210330325">
+
+<h4 id="组合逻辑设计步骤"><a href="#组合逻辑设计步骤" class="headerlink" title="组合逻辑设计步骤"></a>组合逻辑设计步骤</h4><p>组合逻辑设计控制单元时，首先根据上述10条指令微操作的节拍安排，列出微操作命令的操作时间表，然后写出每一个微操作命令（控制信号）的逻辑表达式，最后根据逻辑表达式画出	相应的组合逻辑电路图。</p>
+<p>当然，在设计逻辑图时要考虑门的扇入系数和逻辑级数。如果采用现成芯片，还需选择芯片型号。采用组合逻辑设计方法设汁控制单元，思路清晰，简单明了，但因为每一个微操作命令都对应一个逻辑电路，因此一旦设计完毕便会发现，这种控制单元的线路结构十分庞杂，也不规范，犹如一棵大树，到处都是不规整的枝权。而且指令系统功能越全，微操作命令就越多，线路也越复杂，调试就更困难。为了克服这些缺点，可采用微程序设计方案。但是，随着RISC的出现，组合逻辑设计仍然是设计计算机的一种重要方法。</p>
+<h3 id="微程序设计"><a href="#微程序设计" class="headerlink" title="微程序设计"></a>微程序设计</h3><h4 id="微程序设计思想的产生"><a href="#微程序设计思想的产生" class="headerlink" title="微程序设计思想的产生"></a>微程序设计思想的产生</h4><p>微程序设计省去了组合逻辑设计过程中对逻辑表达式的化简步骤，无须考虑逻辑门级数和门的扇人系数，使设计更简便，而且由于控制信号是以二进制代码的形式出现的，因此只要修改微指令的代码，就可改变操作内容，便于调试、修改，甚至增删机器指令，有利于计算机仿真。</p>
+<h4 id="微程序控制单元框图及工作原理"><a href="#微程序控制单元框图及工作原理" class="headerlink" title="微程序控制单元框图及工作原理"></a>微程序控制单元框图及工作原理</h4><h5 id="机器指令对应的微程序"><a href="#机器指令对应的微程序" class="headerlink" title="机器指令对应的微程序"></a>机器指令对应的微程序</h5><p>采用微程序设计方法设计控制单元的过程就是编写每一条机器指令的微程序，它是按执行每条机器指令所需的微操作命令的先后顺序而编写的，因此，一条机器指令对应一个微程序，。图中每一条机器指令都与一个以操作性质命名的微程序对应。</p>
+<p>由于任何一条机器指令的取指令操作是相同的，因此将取指令操作的命令统一编成一个微程序，这个微程序只负贵将指令从主存单元中取出送至指令寄存器中，如图的取指周期微程序。此外，如果指令是间接寻址，其操作也是可以预测的，也可先编出对应间址周期的微程序。当出现中断时，中断隐指令所需完成的操作可由一个对应中断周期的微程序控制完成。这样，控制存储器中的微程序个数应为机器指令数再加上对应取指、间接寻址和中断周期的3个微程序。</p>
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024210804816.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024210804816">
+
+<h5 id="微程序控制单元的基本框图"><a href="#微程序控制单元的基本框图" class="headerlink" title="微程序控制单元的基本框图"></a>微程序控制单元的基本框图</h5><p>图中点画线框内为微程序控制单元，与图上图相比，它们都有相同的输人，如指令寄存器、各种标志和时钟，输出也是输至CPU内部或系统总线的控制信号点画线框内的控制存储器（简称控存）是微程字控制单元的核心部件，用来存放全部微程序；CMAR是控存地址寄存器，用来存放欲读出的微指令地址CMDR是控存数据寄存器，用来存放从控存读出的微指令；顺序逻辑是用来控制微指令序列的，具体就是控制形成下一条微指令（即后续微指令）的地址，其输人与微地址形成部件（与指令寄存器相连)、微指令的下地址字段以及外来的标志有关。有关微指令序列地址的形成将在</p>
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024211225386.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024211225386">
+
+<img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024211253366.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024211253366">
+
+<h4 id="微指令的编码方式"><a href="#微指令的编码方式" class="headerlink" title="微指令的编码方式"></a>微指令的编码方式</h4><p>微指令的编码方式又称微指令的控制方式，它是指如何对微指令的控制字段进行编码，以形成控制信号，主要有以下几种。</p>
+<h5 id="直接编码（直接控制）方式"><a href="#直接编码（直接控制）方式" class="headerlink" title="直接编码（直接控制）方式"></a>直接编码（直接控制）方式</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024211430004.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024211430004">
+
+<p>在微指令的操作控制字段中，每一位代表一个微操作命令，这种编码方式即为直接编码方式。上面所述的用控制字段中的某位为“1”表示控制信号有效（如打开某个控制门），以及某位为“0”表示控制信号无效（如不打开某个控制门）就是直接控制方式，如图所示。这种方式含义清晰，而且只要微指令从控存读出，即刻可由控制字段发出命令，速度快。但由于机器中微操作命令甚多，可能使微指令操作控制字段达几百位，造成控存容量极大。</p>
+<h5 id="宇段直接编码方式"><a href="#宇段直接编码方式" class="headerlink" title="宇段直接编码方式"></a>宇段直接编码方式</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024211600568.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024211600568">
+
+<p>这种方式就是将微指令的操作控制字段分成若干段，将一组互斥的微操作命令放在一个字段内，通过对这个字段译码，便可对应每一个微命令，如图所示。这种方式因靠字段直接译码发出微命令，故又有显式编码之称。</p>
+<p>采用字段直接编码方法可用较少的二进制信息表示较多的微操作命令信号。例如，3位二进制代码译码后可表示7个互斥的微命令，留出一种状态表示不发微命令，与直接编码用7位表示7个微命令相比，减少了4位，缩短了微指令的长度。但由于增加了译码电路，使微程序的执行速度稍微减慢。至于操作控制字段应分几段，与需要并行发出的微命令个数有关，若需并行发出8个微命令，就可分8段。每毁的长度可以不等，与具体要求互斥的微命令个数有关，若某类操作要求互<br>斥的微命令仅有6个，则字段只需安排3位即可。</p>
+<h5 id="字段间接编码方式"><a href="#字段间接编码方式" class="headerlink" title="字段间接编码方式"></a>字段间接编码方式</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024211729748.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024211729748">
+
+<p>这种方式一个字段的某些微命令还需由另一个字段中的某些微命令来解释，如图所示。图中字段1译码的某些输出受字段2译码输出的控制，由于不是靠字段直接译码发出微命令，故称为字段间接编码，又称隐式编码。这种方法虽然可以进一步缩短微指令字长，但因削弱了微指令的并行控制能力，因此通常用做字段直接编码法的一种辅助手段。</p>
+<h5 id="混合编码"><a href="#混合编码" class="headerlink" title="混合编码"></a>混合编码</h5><p>直接编码和字段编码（直接和间接）混合使用</p>
+<h4 id="微指令序列地址的形成"><a href="#微指令序列地址的形成" class="headerlink" title="微指令序列地址的形成"></a>微指令序列地址的形成</h4><ul>
+<li>直接由微指令的下地址字段指出</li>
+<li>根据机器指令的操作码形成</li>
+<li>增量计数器</li>
+<li>分支转移</li>
+<li>通过测试网络</li>
+<li>由硬件产生微程序入口地址</li>
+<li>后续微指令地址形成方式原理图</li>
+</ul>
+<h4 id="微指令格式"><a href="#微指令格式" class="headerlink" title="微指令格式"></a>微指令格式</h4><h5 id="水平型微指令"><a href="#水平型微指令" class="headerlink" title="水平型微指令"></a>水平型微指令</h5><p>水平型微指令的特点是一次能定义并执行多个并行操作的微命令。从编码方式看，直接编码、字段直接编码、字段间接编码以及直接和字毁混合编码都属于水平型微指令。其中，直接编码速度最快，字段编码要经过译码，故速度受影响。</p>
+<h5 id="垂直型微指令"><a href="#垂直型微指令" class="headerlink" title="垂直型微指令"></a>垂直型微指令</h5><p>垂直型微指令的特点是采用类似机器指令操作码的方式，在微指令字中，设置微操作码字段，由微操作码规定微指令的功能。通常一条微指令有1-2个微命令，控制1-2种操作。这种微指令不强调其并行控制功能。</p>
+<h5 id="两种微指令格式的比较"><a href="#两种微指令格式的比较" class="headerlink" title="两种微指令格式的比较"></a>两种微指令格式的比较</h5><ul>
+<li>水平型微指令比垂直型微指令 并行操作能力强 ， 灵活性强</li>
+<li>水平型微指令执行一条机器指令所要的 微指令 数目少，速度快</li>
+<li>水平型微指令 用较短的微程序结构换取较长的 微指令结构</li>
+<li>水平型微指令与机器指令 差别大</li>
+</ul>
+<h4 id="静态微程序设计和动态微程序设计"><a href="#静态微程序设计和动态微程序设计" class="headerlink" title="静态微程序设计和动态微程序设计"></a>静态微程序设计和动态微程序设计</h4><p>通常指令系统是固定的，对应每一条机器指令的微程序是计算机设计者事先编好的，因此一般微程序无须改变，这种微程序设计技术即称为静态微程序设计，其控制存储器采用ROM。前面讲述的内容基本上属于这一类。</p>
+<p>如果采用EPROM作为控制存储器，人们可以通过改变微指令和微程序来改变机器的指令系统，这种微程序设计技术称为动态微程序设计。动态微程序设计由于可以根据需要改变微指令和微程序，因此可以在一台机器上实现不同类型的指令系统，有利于仿真。但是这种设计对用户的要求很高，目前难以推广。</p>
+<h4 id="毫微程序设计"><a href="#毫微程序设计" class="headerlink" title="毫微程序设计"></a>毫微程序设计</h4><h5 id="毫微程序设计的基本概念"><a href="#毫微程序设计的基本概念" class="headerlink" title="毫微程序设计的基本概念"></a>毫微程序设计的基本概念</h5><p>微程序可看做是解释机器指令的，毫微程序可看做是解释微程序的，而组成毫微程序的毫微指令则是用来解释微指令的。采用毫微程序设计计算机的优点是用少量的控制存储器空间来达到高度的并行。</p>
+<h5 id="毫微程序控制存储器的基本组成"><a href="#毫微程序控制存储器的基本组成" class="headerlink" title="毫微程序控制存储器的基本组成"></a>毫微程序控制存储器的基本组成</h5><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024212452031.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024212452031">
+
+<h4 id="串行微程序控制和并行微程序控制"><a href="#串行微程序控制和并行微程序控制" class="headerlink" title="串行微程序控制和并行微程序控制"></a>串行微程序控制和并行微程序控制</h4><img src="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%9D/image-20231024212523154.png" srcset="/img/loading.gif" lazyload class="" title="image-20231024212523154">
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="category-chain-item">计算机组成原理</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="print-no-link">#基础知识</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%85%AB/" title="控制单元的功能(八)">
+                        <span class="hidden-mobile">控制单元的功能(八)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
