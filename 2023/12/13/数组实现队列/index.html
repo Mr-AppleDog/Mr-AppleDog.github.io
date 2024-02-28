@@ -16,24 +16,24 @@
   <meta name="author" content="李呀李嘉图">
   <meta name="keywords" content="">
   
-    <meta name="description" content="开发软件流程  需求分析以下是一个图书管理系统的需求分析文档示例： 一、项目背景 随着图书馆业务的发展和管理水平的提高，传统的图书管理方式已经无法满足需求。为了提高图书馆的管理效率和读者的借阅体验，需要开发一个图书管理系统来实现对图书的自动化管理。 二、项目目标 本项目的目标是开发一个功能完善、易用、可扩展的图书管理系统，实现以下功能：  实现对图书的分类、编目、入库、检索等功能的信息化管理，提高">
+    <meta name="description" content="队列「队列 queue」是一种遵循先入先出规则的线性数据结构。顾名思义，队列模拟了排队现象，即新来的人不断加入队列尾部，而位于队列头部的人逐个离开。 我们将队列头部称为“队首”，尾部称为“队尾”，将把元素加入队尾的操作称为“入队”，删除队首元素的操作称为“出队”。 队列实现为了实现队列，我们需要一种数据结构，可以在一端添加元素，并在另一端删除元素。链表和数组都符合要求。 在数组中删除首元素的时间复">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件设计与实现">
-<meta property="og:url" content="http://example.com/2023/12/06/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:title" content="数组实现队列">
+<meta property="og:url" content="http://example.com/2023/12/13/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="开发软件流程  需求分析以下是一个图书管理系统的需求分析文档示例： 一、项目背景 随着图书馆业务的发展和管理水平的提高，传统的图书管理方式已经无法满足需求。为了提高图书馆的管理效率和读者的借阅体验，需要开发一个图书管理系统来实现对图书的自动化管理。 二、项目目标 本项目的目标是开发一个功能完善、易用、可扩展的图书管理系统，实现以下功能：  实现对图书的分类、编目、入库、检索等功能的信息化管理，提高">
+<meta property="og:description" content="队列「队列 queue」是一种遵循先入先出规则的线性数据结构。顾名思义，队列模拟了排队现象，即新来的人不断加入队列尾部，而位于队列头部的人逐个离开。 我们将队列头部称为“队首”，尾部称为“队尾”，将把元素加入队尾的操作称为“入队”，删除队首元素的操作称为“出队”。 队列实现为了实现队列，我们需要一种数据结构，可以在一端添加元素，并在另一端删除元素。链表和数组都符合要求。 在数组中删除首元素的时间复">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/background/15.jpg">
-<meta property="article:published_time" content="2023-12-06T15:46:53.000Z">
-<meta property="article:modified_time" content="2023-12-07T05:43:52.037Z">
+<meta property="og:image" content="http://example.com/background/18.jpg">
+<meta property="article:published_time" content="2023-12-13T15:21:45.000Z">
+<meta property="article:modified_time" content="2023-12-13T15:26:08.121Z">
 <meta property="article:author" content="李呀李嘉图">
-<meta property="article:tag" content="软件开发流程">
+<meta property="article:tag" content="队列">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/background/15.jpg">
+<meta name="twitter:image" content="http://example.com/background/18.jpg">
   
   
   
-  <title>软件设计与实现 - Hexo</title>
+  <title>数组实现队列 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="软件设计与实现"></span>
+            <span id="subtitle" data-typed-text="数组实现队列"></span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-06 23:46" pubdate>
-          2023年12月6日 晚上
+        <time datetime="2023-12-13 23:21" pubdate>
+          2023年12月13日 晚上
         </time>
       </span>
     
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          1.6k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          19 分钟
+          14 分钟
         
       </span>
     
@@ -274,153 +274,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">软件设计与实现</h1>
+            <h1 id="seo-header">数组实现队列</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="开发软件流程"><a href="#开发软件流程" class="headerlink" title="开发软件流程"></a>开发软件流程</h3><img src="/2023/12/06/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png" srcset="/img/loading.gif" lazyload class="" title="未命名文件">
+                <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>「队列 queue」是一种遵循先入先出规则的线性数据结构。顾名思义，队列模拟了排队现象，即新来的人不断加入队列尾部，而位于队列头部的人逐个离开。</p>
+<p>我们将队列头部称为“队首”，尾部称为“队尾”，将把元素加入队尾的操作称为“入队”，删除队首元素的操作称为“出队”。</p>
+<h2 id="队列实现"><a href="#队列实现" class="headerlink" title="队列实现"></a>队列实现</h2><p>为了实现队列，我们需要一种数据结构，可以在一端添加元素，并在另一端删除元素。链表和数组都符合要求。</p>
+<p>在数组中删除首元素的时间复杂度为 O(n)，这会导致出队操作效率较低。然而，我们可以采用以下巧妙方法来避免这个问题。</p>
+<p>我们可以使用一个变量 <code>front</code> 指向队首元素的索引，并维护一个变量 <code>size</code> 用于记录队列长度。定义 <code>rear = front + size</code> ，这个公式计算出的 <code>rear</code> 指向队尾元素之后的下一个位置。</p>
+<p>你可能会发现一个问题：在不断进行入队和出队的过程中，<code>front</code> 和 <code>rear</code> 都在向右移动，<strong>当它们到达数组尾部时就无法继续移动了</strong>。为了解决此问题，我们可以将数组视为首尾相接的“环形数组”。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayQueue</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> front; <span class="hljs-comment">// 队首指针，指向队首元素</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> queSize;<span class="hljs-comment">// 队列长度</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] arr;<span class="hljs-comment">// 用于存储队列元素的数组</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> capacity)</span> &#123;<br>        arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[capacity];<span class="hljs-comment">//初始化能数组大小</span><br>        front=queSize=<span class="hljs-number">0</span>;<span class="hljs-comment">//初始化队首、队列长度</span><br>    &#125;<br>    <span class="hljs-comment">//获取队列的容量</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">capacity</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> arr.length;<br>    &#125;<br>    <span class="hljs-comment">//获取队列的长度</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">size</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">return</span> queSize;<br>    &#125;<br>    <span class="hljs-comment">//判断队列是否为空</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">return</span> queSize==<span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-comment">//判断队列是否满</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">boolean</span> result=<span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span>(queSize==capacity())&#123;<br>            result=<span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-comment">//添加元素</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span>&#123;<br>        <span class="hljs-keyword">if</span>(isFull())&#123;<br>            System.out.println(<span class="hljs-string">&quot;队列已满，添加失败&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-comment">// 通过取余操作，实现 rear 越过数组尾部后回到头部</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">rear</span> <span class="hljs-operator">=</span> (front + queSize) % capacity();<br>        arr[rear]=num;<br>        queSize++;<br>    &#125;<br>    <span class="hljs-comment">//删除队首元素</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">pop</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">if</span>(isEmpty())&#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IndexOutOfBoundsException</span>();<br>        &#125;<br>        front++;<br>        queSize--;<br>    &#125;<br>    <span class="hljs-comment">//查看队首元素</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">peek</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">if</span>(isEmpty())&#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IndexOutOfBoundsException</span>();<br>        &#125;<br>        <span class="hljs-keyword">return</span> arr[front];<br>    &#125;<br>    <span class="hljs-comment">//把队列数组转化为数组</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] toArray()&#123;<br>        <span class="hljs-type">int</span>[] res=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[queSize];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=front;i&lt;queSize;i++,j++)&#123;<br>            res[i]=arr[j%capacity()];<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>以下是一个图书管理系统的需求分析文档示例：</p>
-<p>一、项目背景</p>
-<p>随着图书馆业务的发展和管理水平的提高，传统的图书管理方式已经无法满足需求。为了提高图书馆的管理效率和读者的借阅体验，需要开发一个图书管理系统来实现对图书的自动化管理。</p>
-<p>二、项目目标</p>
-<p>本项目的目标是开发一个功能完善、易用、可扩展的图书管理系统，实现以下功能：</p>
-<ol>
-<li>实现对图书的分类、编目、入库、检索等功能的信息化管理，提高图书管理效率；</li>
-<li>实现对图书借阅、归还等过程的信息化管理，方便读者操作，提高借阅体验；</li>
-<li>实现对读者信息的管理和维护，方便图书馆员进行读者管理；</li>
-<li>实现对借阅数据的统计和分析，为图书馆的运营和发展提供数据支持；</li>
-<li>具备良好的安全性和可靠性，保证数据的安全和系统的稳定运行。</li>
-</ol>
-<p>三、用户需求</p>
-<p>本项目的用户包括图书馆员、读者和管理员等不同角色，他们对系统的需求如下：</p>
-<ol>
-<li>图书馆员需求：</li>
-</ol>
-<ul>
-<li>能够添加、编辑和删除图书信息，包括书名、作者、出版社、ISBN号等信息；</li>
-<li>能够添加、编辑和删除分类信息；</li>
-<li>能够查询读者的借阅信息、归还信息和借阅历史；</li>
-<li>能够进行借阅和归还操作，记录借阅时间、借阅人、图书名称等信息；</li>
-<li>能够统计和查看借阅数据，包括各分类图书的借阅次数、借阅人数等。</li>
-</ul>
-<ol>
-<li>读者需求：</li>
-</ol>
-<ul>
-<li>能够查询可借阅的图书信息；</li>
-<li>能够进行借阅和归还操作，记录借阅时间、归还时间、借阅人等信息；</li>
-<li>能够查询自己的借阅信息、归还信息和借阅历史。</li>
-</ul>
-<ol>
-<li>管理员需求：</li>
-</ol>
-<ul>
-<li>能够管理图书馆员的账号和权限；</li>
-<li>能够查看和导出系统的所有数据，包括图书信息、读者信息、借阅信息等；</li>
-<li>能够设置系统的参数和配置项，例如系统名称、单位名称等信息。</li>
-</ul>
-<h3 id="Spec"><a href="#Spec" class="headerlink" title="Spec"></a>Spec</h3><p>以下是一个图书管理系统的Spec文档示例：</p>
-<p>一、概述</p>
-<p>本Spec文档旨在详细描述图书管理系统的功能需求和其他方面的需求，为开发团队提供设计和开发依据。该图书管理系统旨在提高图书馆的管理效率和读者的借阅体验。</p>
-<p>二、功能需求</p>
-<ol>
-<li>用户登录与权限管理</li>
-</ol>
-<ul>
-<li>管理员可以设置图书馆员的账号和权限；</li>
-<li>图书馆员可以登录系统，进行图书管理、借阅、归还等操作；</li>
-<li>读者可以登录系统，进行图书查询、借阅、归还等操作。</li>
-</ul>
-<ol>
-<li>图书入库管理</li>
-</ol>
-<ul>
-<li>图书馆员可以添加新图书信息，包括书名、作者、出版社、ISBN号等信息；</li>
-<li>图书馆员可以编辑和删除图书信息。</li>
-</ul>
-<ol>
-<li>图书分类管理</li>
-</ol>
-<ul>
-<li>图书馆员可以设置图书分类，例如文学、历史、哲学等；</li>
-<li>图书馆员可以编辑和删除分类信息。</li>
-</ul>
-<ol>
-<li>借阅图书管理</li>
-</ol>
-<ul>
-<li>读者可以查询可借阅的图书信息；</li>
-<li>读者可以借阅图书，系统记录借阅信息，包括借阅时间、借阅人、图书名称等；</li>
-<li>读者可以归还图书，系统记录归还信息，包括归还时间、归还人、图书名称等。</li>
-</ul>
-<ol>
-<li>统计与报表生成</li>
-</ol>
-<ul>
-<li>系统可以统计各类图书的借阅情况，包括各分类图书的借阅次数、借阅人数等；</li>
-<li>系统可以生成借阅报表，包括各时间段、各分类的借阅情况等。</li>
-</ul>
-<p>三、非功能需求</p>
-<ol>
-<li>性能需求</li>
-</ol>
-<ul>
-<li>系统响应时间不超过2秒；</li>
-<li>处理速度满足日常业务需求。</li>
-</ul>
-<ol>
-<li>数据管理需求</li>
-</ol>
-<ul>
-<li>数据存储安全可靠，备份与恢复及时；</li>
-<li>数据传输与处理过程需遵循相关法律法规。</li>
-</ul>
-<ol>
-<li>界面设计需求</li>
-</ol>
-<ul>
-<li>界面简洁明了，易于理解和操作；</li>
-<li>颜色搭配合理，符合视觉习惯。</li>
-</ul>
-<h3 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h3><p>以下是一个图书管理系统的详细设计文档示例，包括系统架构、功能模块、数据库设计、界面设计等方面的详细描述：</p>
-<p>一、系统架构</p>
-<p>本图书管理系统采用B&#x2F;S架构，即浏览器与服务器架构。用户通过浏览器访问系统，而服务器负责处理用户的请求和数据存储。系统采用三层架构，即数据访问层、业务逻辑层和表现层。</p>
-<ol>
-<li>数据访问层：负责与数据库进行交互，包括数据的查询、插入、更新和删除等操作。</li>
-<li>业务逻辑层：负责处理系统的业务逻辑，包括对图书的管理、借阅、归还等操作。</li>
-<li>表现层：负责展示系统的界面，包括页面布局、控件和样式等。</li>
-</ol>
-<p>二、功能模块</p>
-<p>本图书管理系统包括以下功能模块：</p>
-<ol>
-<li>登录模块：实现用户登录和权限管理功能。</li>
-<li>图书管理模块：实现图书的分类、编目、入库、检索等功能的信息化管理。</li>
-<li>借阅管理模块：实现读者借阅、归还等过程的信息化管理，包括借阅申请、借阅审批、归还等操作。</li>
-<li>读者管理模块：实现读者信息的信息化管理，包括读者注册、信息维护、密码修改等操作。</li>
-<li>统计报表模块：实现借阅数据的统计和分析功能，为图书馆的运营和发展提供数据支持。</li>
-<li>系统设置模块：实现系统的参数设置和配置项管理功能。</li>
-</ol>
-<p>三、数据库设计</p>
-<p>本图书管理系统采用关系型数据库进行数据存储和管理。数据库设计包括以下表结构：</p>
-<ol>
-<li>图书表：包括书名、作者、出版社、ISBN号等信息。</li>
-<li>分类表：包括分类名称和分类ID等信息。</li>
-<li>借阅表：包括借阅人ID、图书ID、借阅时间等信息。</li>
-<li>读者表：包括读者ID、姓名、性别、联系电话等信息。</li>
-<li>系统表：包括系统名称、单位名称等信息。</li>
-</ol>
-<p>四、界面设计</p>
-<p>本图书管理系统的界面设计遵循简洁明了、易于操作的原则，采用常见的Web界面设计风格。主界面包括以下部分：</p>
-<ol>
-<li>菜单栏：包括登录、图书管理、借阅管理、读者管理、统计报表和系统设置等菜单项。</li>
-<li>图书列表：展示图书馆的图书列表，包括书名、作者、出版社等信息。用户可以按照分类进行筛选，也可以进行关键字搜索。</li>
-<li>借阅申请：用户可以在该界面提交借阅申请，选择要借阅的图书和借阅时间等信息。</li>
-<li>借阅审批：图书馆员可以在该界面进行借阅审批操作，审核读者的借阅申请。</li>
-<li>读者信息：该界面展示读者的基本信息，包括姓名、性别、联系电话等信息。图书馆员可以编辑和删除读者的信息。</li>
-<li>统计报表：该界面展示借阅数据的统计和分析结果，包括各分类图书的借阅次数、借阅人数等数据。图书馆员可以导出报表数据进行进一步的分析和决策。</li>
-</ol>
 
                 
               </div>
@@ -439,7 +305,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="category-chain-item">软件工程</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
   
   
 
@@ -454,7 +320,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" class="print-no-link">#软件开发流程</a>
+        <a href="/tags/%E9%98%9F%E5%88%97/" class="print-no-link">#队列</a>
       
     </div>
   
@@ -468,9 +334,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/09/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" title="简单工厂模式">
+                      <a href="/2024/02/27/JDBC/" title="JDBC">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">简单工厂模式</span>
+                        <span class="hidden-mobile">JDBC</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -478,8 +344,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/31/Java%E5%9F%BA%E7%A1%80/" title="Java基础">
-                        <span class="hidden-mobile">Java基础</span>
+                      <a href="/2023/12/13/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%92%8C%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/" title="二维数组和稀疏数组">
+                        <span class="hidden-mobile">二维数组和稀疏数组</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
